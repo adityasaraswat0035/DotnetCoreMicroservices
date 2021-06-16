@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mango.product.repository.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace mango.product.repository.DbContexts
@@ -13,5 +14,7 @@ namespace mango.product.repository.DbContexts
         {
 
         }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
