@@ -2,7 +2,8 @@
 
 namespace mango.product.api.db
 {
-    public class ProductApiDatabaseMigration
+    //Marker Interface
+    public interface ProductApiDatabaseMigration
     {
     }
 }
