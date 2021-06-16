@@ -1,3 +1,4 @@
+using mango.product.api.db;
 using mango.product.repository.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,8 +30,12 @@ namespace mango.product.api
         public void ConfigureServices(IServiceCollection services)
         {
             //Db Context Dependency Registered with Sql Server RDBMS
-            services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProductApiDatabase")));
-            
+            services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("ProductApiDatabase"), options =>
+                {
+                    options.MigrationsAssembly(typeof(ProductApiDatabaseMigration).Assembly.FullName);
+                }));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
