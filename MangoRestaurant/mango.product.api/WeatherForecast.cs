@@ -1,6 +1,6 @@
 using System;
 
-namespace mango.services.product.api
+namespace mango.product.api
 {
     public class WeatherForecast
     {

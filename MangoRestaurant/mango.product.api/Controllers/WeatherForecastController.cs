@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace mango.services.product.api.Controllers
+namespace mango.product.api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

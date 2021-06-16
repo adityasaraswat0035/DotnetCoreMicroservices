@@ -9,15 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.web", "Mango.web\mang
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3DCD3F44-F8C0-4923-BE0A-F055773D7158}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.services.product.api", "mango.services.product.api\mango.services.product.api.csproj", "{084F5447-1CD2-46ED-AD6D-5236D40020CE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "managers", "managers", "{33B71942-46AD-4A3F-BC58-59C4DD7FED90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repositories", "repositories", "{E901C0E1-B998-43A5-8E0A-54D7C70402A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.product.repository", "mango.services.product.repository\mango.product.repository.csproj", "{F84FEC5C-EEEB-4F41-8A44-52C284A9815D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.api", "mango.product.api\mango.product.api.csproj", "{A81CBDAF-67CF-4B3C-938E-82BAE1BA4FA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.product.manager", "mango.services.product.manager\mango.product.manager.csproj", "{692790F1-44B0-40DB-835D-D02DC8EB0C17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.repository", "mango.product.repository\mango.product.repository.csproj", "{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.manager", "mango.product.manager\mango.product.manager.csproj", "{9D5C72C2-1C1E-4F04-8249-0F729D6543B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,27 +29,27 @@ Global
 		{802DC75F-2259-4592-8F5E-E686A8CB6023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{802DC75F-2259-4592-8F5E-E686A8CB6023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{802DC75F-2259-4592-8F5E-E686A8CB6023}.Release|Any CPU.Build.0 = Release|Any CPU
-		{084F5447-1CD2-46ED-AD6D-5236D40020CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{084F5447-1CD2-46ED-AD6D-5236D40020CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{084F5447-1CD2-46ED-AD6D-5236D40020CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{084F5447-1CD2-46ED-AD6D-5236D40020CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F84FEC5C-EEEB-4F41-8A44-52C284A9815D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F84FEC5C-EEEB-4F41-8A44-52C284A9815D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F84FEC5C-EEEB-4F41-8A44-52C284A9815D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F84FEC5C-EEEB-4F41-8A44-52C284A9815D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{692790F1-44B0-40DB-835D-D02DC8EB0C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{692790F1-44B0-40DB-835D-D02DC8EB0C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{692790F1-44B0-40DB-835D-D02DC8EB0C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{692790F1-44B0-40DB-835D-D02DC8EB0C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81CBDAF-67CF-4B3C-938E-82BAE1BA4FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81CBDAF-67CF-4B3C-938E-82BAE1BA4FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81CBDAF-67CF-4B3C-938E-82BAE1BA4FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81CBDAF-67CF-4B3C-938E-82BAE1BA4FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D5C72C2-1C1E-4F04-8249-0F729D6543B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D5C72C2-1C1E-4F04-8249-0F729D6543B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D5C72C2-1C1E-4F04-8249-0F729D6543B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D5C72C2-1C1E-4F04-8249-0F729D6543B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{802DC75F-2259-4592-8F5E-E686A8CB6023} = {6F8B91F0-E737-4EB1-A893-941D2362D888}
-		{084F5447-1CD2-46ED-AD6D-5236D40020CE} = {3DCD3F44-F8C0-4923-BE0A-F055773D7158}
-		{F84FEC5C-EEEB-4F41-8A44-52C284A9815D} = {E901C0E1-B998-43A5-8E0A-54D7C70402A9}
-		{692790F1-44B0-40DB-835D-D02DC8EB0C17} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
+		{A81CBDAF-67CF-4B3C-938E-82BAE1BA4FA6} = {3DCD3F44-F8C0-4923-BE0A-F055773D7158}
+		{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1} = {E901C0E1-B998-43A5-8E0A-54D7C70402A9}
+		{9D5C72C2-1C1E-4F04-8249-0F729D6543B2} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35FAD2FD-8A40-4DD1-B47C-5E9CA11E1A86}
