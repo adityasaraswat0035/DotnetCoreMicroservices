@@ -26,6 +26,11 @@ namespace mango.infrstructure.common.Wrappers
         {
             return new Optional<T>(default(T), true, noneMessage);
         }
+
+        public static Optional<T> None()
+        {
+            return new Optional<T>(default(T), true,string.Empty);
+        }
         public T Get()
         {
             return GetOrThrow(message => new ApplicationException(message));
