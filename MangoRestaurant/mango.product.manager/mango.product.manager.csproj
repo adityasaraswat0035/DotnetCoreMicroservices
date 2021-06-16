@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\mango.product.contract\mango.product.contract.csproj" />
+    <ProjectReference Include="..\mango.product.repository\mango.product.repository.csproj" />
+  </ItemGroup>
+
 </Project>
