@@ -23,6 +23,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migrations", "migrations", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.product.api.db", "mango.product.api.db\mango.product.api.db.csproj", "{A144C39B-95D8-479D-BC5B-795A38EEA4AD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contracts", "contracts", "{8D86B16A-199F-4A72-9732-3BFEA7765F29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.product.contract", "mango.product.contract\mango.product.contract.csproj", "{4C26B749-DA80-480F-BF67-1299D6129673}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{20B0FDB3-F25D-4266-9489-716592056DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.infrstructure.common", "mango.infrstructure.common\mango.infrstructure.common.csproj", "{4CAA7198-0D14-4FDA-99EB-7A6F91123263}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +57,14 @@ Global
 		{A144C39B-95D8-479D-BC5B-795A38EEA4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A144C39B-95D8-479D-BC5B-795A38EEA4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A144C39B-95D8-479D-BC5B-795A38EEA4AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C26B749-DA80-480F-BF67-1299D6129673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C26B749-DA80-480F-BF67-1299D6129673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C26B749-DA80-480F-BF67-1299D6129673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C26B749-DA80-480F-BF67-1299D6129673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CAA7198-0D14-4FDA-99EB-7A6F91123263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CAA7198-0D14-4FDA-99EB-7A6F91123263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CAA7198-0D14-4FDA-99EB-7A6F91123263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CAA7198-0D14-4FDA-99EB-7A6F91123263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +75,8 @@ Global
 		{BA5BDB74-BD26-4F25-B857-E698BF4BCFA1} = {E901C0E1-B998-43A5-8E0A-54D7C70402A9}
 		{9D5C72C2-1C1E-4F04-8249-0F729D6543B2} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
 		{A144C39B-95D8-479D-BC5B-795A38EEA4AD} = {6D38B533-D350-49D2-8AB6-02BD512BE3F7}
+		{4C26B749-DA80-480F-BF67-1299D6129673} = {8D86B16A-199F-4A72-9732-3BFEA7765F29}
+		{4CAA7198-0D14-4FDA-99EB-7A6F91123263} = {20B0FDB3-F25D-4266-9489-716592056DDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35FAD2FD-8A40-4DD1-B47C-5E9CA11E1A86}
