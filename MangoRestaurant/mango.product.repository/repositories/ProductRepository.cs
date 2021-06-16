@@ -1,5 +1,4 @@
-﻿using mango.infrstructure.common.Wrappers;
-using mango.product.repository.Entities;
+﻿using mango.product.repository.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +9,11 @@ namespace mango.product.repository.repositories
 {
     public interface ProductRepository
     {
-        Task<IEnumerable<Product>> GetProducts();
-        Task<Optional<Product>> GetProduct(int productId);
+        Task<IEnumerable<Product>> GetProductsAsync();
+        Task<Product> GetProductAsync(int productId);
 
-        Task<Optional<Product>> SaveProduct(Product product);
+        Task<Product> SaveProductAsync(Product product);
 
-        Task<Optional<Product>> DeleteProduct(Product product);
+        Task DeleteProductAsync(int productId);
     }
 }

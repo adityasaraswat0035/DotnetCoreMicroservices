@@ -1,4 +1,10 @@
-﻿using System;
+﻿using AutoMapper;
+using mango.infrstructure.common.Wrappers;
+using mango.product.contract.contracts;
+using mango.product.contract.dtos;
+using mango.product.repository.Entities;
+using mango.product.repository.repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +12,42 @@ using System.Threading.Tasks;
 
 namespace mango.product.manager
 {
-    public class ProductManagerImpl
+    public class ProductManagerImpl : ProductManager
     {
+        private readonly ProductRepository productRepository;
+        private readonly IMapper mapper;
 
+        public ProductManagerImpl(ProductRepository productRepository, IMapper mapper)
+        {
+            this.productRepository = productRepository;
+            this.mapper = mapper;
+        }
+
+        public Task DeleteProductAsync(int productId)
+        {
+            return productRepository.DeleteProductAsync(productId);
+        }
+
+        public async Task<Optional<ProductDto>> GetProductAsync(int productId)
+        {
+            var product = await productRepository.GetProductAsync(productId);
+            if (product != null)
+                return Optional<ProductDto>.Some(mapper.Map<ProductDto>(product));
+            else
+                return Optional<ProductDto>.None();
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsAsync()
+        {
+            var product = await productRepository.GetProductsAsync();
+            return mapper.Map<IEnumerable<ProductDto>>(product);
+        }
+
+        public async Task<ProductDto> SaveProductAsync(ProductDto productDto)
+        {
+            var product = mapper.Map<Product>(productDto);
+            var savedProduct = await productRepository.SaveProductAsync(product);
+            return mapper.Map<ProductDto>(savedProduct);
+        }
     }
 }
