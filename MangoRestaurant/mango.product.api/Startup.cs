@@ -1,3 +1,4 @@
+using mango.infrastructure.boilerplate;
 using mango.product.api.db;
 using mango.product.manager.Mappers.Configurations;
 using mango.product.repository.DbContexts;
@@ -20,8 +21,10 @@ namespace mango.product.api
 {
     public class Startup
     {
+        private readonly Bootstraper bootstraper = null;
         public Startup(IConfiguration configuration)
         {
+            bootstraper = new Bootstraper(configuration);
             Configuration = configuration;
         }
 
@@ -30,44 +33,13 @@ namespace mango.product.api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Db Context Dependency Registered with Sql Server RDBMS
-            services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(
-                Configuration.GetConnectionString("ProductApiDatabase"), options =>
-                {
-                    options.MigrationsAssembly(typeof(ProductApiDatabaseMigration).Assembly.FullName);
-                }));
-            //Auto Mapper Regsiteration
-            services.AddSingleton(MapperConfig.RegisterMaps());
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "mango.services.product.api", Version = "v1" });
-            });
+            bootstraper.BuildOutServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "mango.services.product.api v1"));
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            bootstraper.BuildOutApplication(app, env);
         }
     }
 }
