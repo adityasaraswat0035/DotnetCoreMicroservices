@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\mango.product.api.db\mango.product.api.db.csproj" />
+    <ProjectReference Include="..\mango.product.manager\mango.product.manager.csproj" />
     <ProjectReference Include="..\mango.product.repository\mango.product.repository.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 using mango.product.api.db;
+using mango.product.manager.Mappers.Configurations;
 using mango.product.repository.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,10 @@ namespace mango.product.api
                 {
                     options.MigrationsAssembly(typeof(ProductApiDatabaseMigration).Assembly.FullName);
                 }));
+            //Auto Mapper Regsiteration
+            services.AddSingleton(MapperConfig.RegisterMaps());
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
