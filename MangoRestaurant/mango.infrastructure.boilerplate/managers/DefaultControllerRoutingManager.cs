@@ -13,7 +13,9 @@ namespace mango.infrastructure.boilerplate.managers
     {
         public virtual void ConfigureService(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options=> {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
         }
 
         public virtual void Configure(IApplicationBuilder app, IWebHostEnvironment env)

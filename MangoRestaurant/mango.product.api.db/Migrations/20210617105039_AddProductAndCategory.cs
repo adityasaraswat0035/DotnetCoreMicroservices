@@ -2,7 +2,7 @@
 
 namespace mango.product.api.db.Migrations
 {
-    public partial class AddProductAndCategoryToDb : Migration
+    public partial class AddProductAndCategory : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

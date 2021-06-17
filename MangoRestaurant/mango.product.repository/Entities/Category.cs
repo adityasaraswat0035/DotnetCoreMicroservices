@@ -1,4 +1,5 @@
 ﻿using mango.product.repository.Entities.Base;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,7 +14,7 @@ namespace mango.product.repository.Entities
     /// Represent Product Category in Database
     /// </summary>
     [Table(name: "ProductCategory", Schema = "dbo")]
-    public class Category:BaseEntity<int>
+    public class Category : BaseEntity<int>
     {
         /// <summary>
         /// /// <summary>
@@ -23,10 +24,7 @@ namespace mango.product.repository.Entities
         [Column(name: "Name")]
         [Required]
         public String Name { get; set; }
-        /// <summary>
-        /// Mapping for Products To Category
-        /// </summary>
-        [InverseProperty(nameof(Product.Category))]
-        public ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+
     }
 }

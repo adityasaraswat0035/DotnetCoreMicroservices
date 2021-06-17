@@ -34,12 +34,12 @@ namespace mango.product.api.Controllers
             return OptionalOK(await productManager.GetProductAsync(productId).ConfigureAwait(false));
         }
         [HttpPost]
-        public async Task<IActionResult> Post(ProductDto productDto)
+        public async Task<IActionResult> Post([FromBody]ProductDto productDto)
         {
             return Ok(await productManager.SaveProductAsync(productDto).ConfigureAwait(false));
         }
         [HttpPut]
-        public async Task<IActionResult> Put(ProductDto productDto)
+        public async Task<IActionResult> Put([FromBody] ProductDto productDto)
         {
             return Ok(await productManager.SaveProductAsync(productDto).ConfigureAwait(false));
         }

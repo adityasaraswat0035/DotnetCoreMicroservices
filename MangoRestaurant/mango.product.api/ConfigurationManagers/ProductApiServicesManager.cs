@@ -17,8 +17,9 @@ namespace mango.product.api.ConfigurationManagers
         {
             services.AddScoped<ProductManager, ProductManagerImpl>();
             services.AddScoped<CategoryManager, CategoryManagerImpl>();
-            services.AddScoped(typeof(GenericRepository<,>), typeof(GenericRepositoryImpl<,>));
-           
+            services.AddScoped<CategoryRepository, CategoryRepositoryImpl>();
+            services.AddScoped<ProductRepository, ProductRepositoryImpl>();
+
         }
     }
 }

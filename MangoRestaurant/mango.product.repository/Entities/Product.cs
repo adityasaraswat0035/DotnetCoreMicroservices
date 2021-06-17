@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 /// <summary>
 /// Represent Product Entity in the Database
+/// Info: for Simple Entity Lazy Loading read https://www.learnentityframeworkcore.com/lazy-loading
 /// </summary>
 namespace mango.product.repository.Entities
 {
     [Table(name: "Product", Schema = "dbo")]
-    public class Product: BaseEntity<int>
+    public class Product : BaseEntity<int>
     {
         /// <summary>
         /// Mandatory Product Name
@@ -33,24 +34,16 @@ namespace mango.product.repository.Entities
         /// Details About the Product
         /// </summary>
         [Column("Description")]
-        public String Descritpion { get; set; }
+        public String Description { get; set; }
         /// <summary>
-        /// Url of Images Stored in Blob Storage (Azure or Other Databases or FTP Server or Static Folder)
+        /// Url of Images Stored in Blob Storage (Azure or Other Databases or FTP Server or Static Folder) i.e Just the Image Name and Extension
         /// </summary>
         [Column("ImageUrl")]
         public String ImageUrl { get; set; }
 
         /// <summary>
-        /// Foreign Key Column Category
-        /// </summary>
-        [Column("CategoryId")]
-        [ForeignKey(nameof(Category))]
-        [Required]
-        public int CategoryId { get; set; }
-
-        /// <summary>
         /// Category to Product Mapping
         /// </summary>
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

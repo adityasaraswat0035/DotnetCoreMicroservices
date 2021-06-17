@@ -12,13 +12,20 @@ namespace mango.product.repository.DbContexts
     {
         public ProductDbContext(DbContextOptions<ProductDbContext> dbContextOptions) : base(dbContextOptions)
         {
-
+            this.ChangeTracker.LazyLoadingEnabled = false;
         }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.Entity<Product>().
+                HasOne(x => x.Category)
+                .WithMany(x => x.Products).HasForeignKey("CategoryId").IsRequired().OnDelete(DeleteBehavior.Cascade);
         }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+
     }
 }

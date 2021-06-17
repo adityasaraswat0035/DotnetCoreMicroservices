@@ -14,10 +14,10 @@ namespace mango.product.manager
 {
     public class ProductManagerImpl : ProductManager
     {
-        private readonly GenericRepository<Product, int> productRepository;
+        private readonly ProductRepository productRepository;
         private readonly IMapper mapper;
 
-        public ProductManagerImpl(GenericRepository<Product,int> productRepository, IMapper mapper)
+        public ProductManagerImpl(ProductRepository productRepository, IMapper mapper)
         {
             this.productRepository = productRepository;
             this.mapper = mapper;

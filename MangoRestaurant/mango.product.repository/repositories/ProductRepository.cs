@@ -9,11 +9,11 @@ namespace mango.product.repository.repositories
 {
     public interface ProductRepository
     {
-        Task<IEnumerable<Product>> GetProductsAsync();
-        Task<Product> GetProductAsync(int productId);
+        Task<IEnumerable<Product>> GetAsync();
+        Task<Product> GetAsync(int productId);
 
-        Task<Product> SaveProductAsync(Product product);
+        Task<Product> SaveAsync(Product product);
 
-        Task DeleteProductAsync(int productId);
+        Task DeleteAsync(int productId);
     }
 }

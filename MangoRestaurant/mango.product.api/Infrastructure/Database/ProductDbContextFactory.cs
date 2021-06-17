@@ -7,18 +7,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace mango.product.api.Infrastructure.DbContext
+namespace mango.product.api.Infrastructure.Database
 {
     public class ProductDbContextFactory : IDesignTimeDbContextFactory<ProductDbContext>
     {
         public ProductDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ProductDbContext>();
-             optionsBuilder.UseSqlServer("Server=localhost;Database=MangoProductApi;Trusted_Connection=true;MultipleActiveResultSets=true",
-              sqlOptions =>
-              {
-                  sqlOptions.MigrationsAssembly(typeof(ProductApiDatabaseMigration).Assembly.FullName);
-              });
+            optionsBuilder.UseSqlServer("Server=localhost;Database=MangoProductApi;Trusted_Connection=true;MultipleActiveResultSets=true",
+             sqlOptions =>
+             {
+                 sqlOptions.MigrationsAssembly(typeof(ProductApiDatabaseMigration).Assembly.FullName);
+             });
 
             return new ProductDbContext(optionsBuilder.Options);
         }

@@ -9,6 +9,7 @@ namespace mango.product.contract.dtos
     public class CategoryDto
     {
         public int Id { get; set; }
+        //public List<ProductDto> Products { get; set; }
         public String Name { get; set; }
     }
 }

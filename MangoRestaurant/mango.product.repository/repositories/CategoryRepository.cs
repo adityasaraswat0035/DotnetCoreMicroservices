@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace mango.product.repository.repositories
 {
-    interface CategoryRepository
+    public interface CategoryRepository
     {
-        Task<IEnumerable<Category>> GetCategoriesAsync();
-        Task<Category> GetCategoryAsync(int productId);
+        Task<IEnumerable<Category>> GetAsync();
+        Task<Category> GetAsync(int categoryId);
 
-        Task<Category> SaveCategoryAsync(Product product);
+        Task<Category> SaveAsync(Category category);
 
-        Task DeleteCategoryAsync(int productId);
+        Task DeleteAsync(int categoryId);
     }
 }

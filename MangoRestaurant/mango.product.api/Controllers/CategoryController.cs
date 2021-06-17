@@ -32,7 +32,7 @@ namespace mango.product.api.Controllers
             return OptionalOK(await categoryManager.GetCategoryAsync(categoryId).ConfigureAwait(false));
         }
         [HttpPost]
-        public async Task<IActionResult> Post(CategoryDto categoryDto)
+        public async Task<IActionResult> Post([FromBody] CategoryDto categoryDto)
         {
             return Ok(await categoryManager.SaveCategoryAsync(categoryDto).ConfigureAwait(false));
         }

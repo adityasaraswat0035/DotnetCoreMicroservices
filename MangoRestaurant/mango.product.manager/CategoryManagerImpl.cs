@@ -14,15 +14,13 @@ namespace mango.product.manager
 {
     public class CategoryManagerImpl : CategoryManager
     {
-        private readonly GenericRepository<Category, int> categoryRepository;
+        private readonly CategoryRepository categoryRepository;
         private readonly IMapper mapper;
-        private readonly GenericRepository<Product, int> productRepository;
 
-        public CategoryManagerImpl(GenericRepository<Category, int> categoryRepository, IMapper mapper, GenericRepository<Product, int> productRepository)
+        public CategoryManagerImpl(CategoryRepository categoryRepository, IMapper mapper)
         {
             this.categoryRepository = categoryRepository;
             this.mapper = mapper;
-            this.productRepository = productRepository;
         }
         public Task DeleteCategoryAsync(int categoryId)
         {

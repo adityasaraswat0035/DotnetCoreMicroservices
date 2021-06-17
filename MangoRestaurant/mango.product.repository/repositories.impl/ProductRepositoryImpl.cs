@@ -17,7 +17,7 @@ namespace mango.product.repository.repositories.impl
         {
             this.productDbContext = productDbContext;
         }
-        public async Task DeleteProductAsync(int productId)
+        public async Task DeleteAsync(int productId)
         {
             var product = await productDbContext.Products.FindAsync(productId);
             if (product != null)
@@ -27,18 +27,19 @@ namespace mango.product.repository.repositories.impl
             }
         }
 
-        public async Task<Product> GetProductAsync(int productId)
+        public async Task<Product> GetAsync(int productId)
         {
             var product = await productDbContext.Products.FindAsync(productId);
+            await productDbContext.Entry(product).Reference(x => x.Category).LoadAsync();
             return product;
         }
 
-        public async Task<IEnumerable<Product>> GetProductsAsync()
+        public async Task<IEnumerable<Product>> GetAsync()
         {
-            return await productDbContext.Products.ToListAsync();
+            return await productDbContext.Products.Include(x=>x.Category).ToListAsync();
         }
 
-        public async Task<Product> SaveProductAsync(Product product)
+        public async Task<Product> SaveAsync(Product product)
         {
             if (product.Id > 0)
             {

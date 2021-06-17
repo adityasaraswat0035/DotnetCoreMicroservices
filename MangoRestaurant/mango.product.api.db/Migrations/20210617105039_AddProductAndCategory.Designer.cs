@@ -9,8 +9,8 @@ using mango.product.repository.DbContexts;
 namespace mango.product.api.db.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20210617055322_AddedRefrentialContraintBetweenCategoryAndProduct")]
-    partial class AddedRefrentialContraintBetweenCategoryAndProduct
+    [Migration("20210617105039_AddProductAndCategory")]
+    partial class AddProductAndCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,10 +47,9 @@ namespace mango.product.api.db.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int")
-                        .HasColumnName("CategoryId");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Descritpion")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Description");
 
