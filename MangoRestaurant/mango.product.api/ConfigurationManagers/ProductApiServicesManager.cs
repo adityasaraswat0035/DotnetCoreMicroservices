@@ -15,8 +15,10 @@ namespace mango.product.api.ConfigurationManagers
     {
         public override void ConfigureService(IServiceCollection services)
         {
-            services.AddScoped<ProductRepository, ProductRepositoryImpl>();
             services.AddScoped<ProductManager, ProductManagerImpl>();
+            services.AddScoped<CategoryManager, CategoryManagerImpl>();
+            services.AddScoped(typeof(GenericRepository<,>), typeof(GenericRepositoryImpl<,>));
+           
         }
     }
 }
