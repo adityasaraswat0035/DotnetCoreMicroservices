@@ -1,4 +1,5 @@
-﻿using mango.web.Contracts;
+﻿using mango.web.Configuration;
+using mango.web.Contracts;
 using mango.web.Services.Models;
 using Newtonsoft.Json;
 using System;
@@ -38,16 +39,16 @@ namespace mango.web.Services.Impl
                 }
                 switch (request.Type)
                 {
-                    case Configuration.Services.RequestType.GET:
+                    case RequestType.GET:
                         message.Method = HttpMethod.Get;
                         break;
-                    case Configuration.Services.RequestType.PUT:
+                    case RequestType.PUT:
                         message.Method = HttpMethod.Put;
                         break;
-                    case Configuration.Services.RequestType.POST:
+                    case RequestType.POST:
                         message.Method = HttpMethod.Post;
                         break;
-                    case Configuration.Services.RequestType.DELETE:
+                    case RequestType.DELETE:
                         message.Method = HttpMethod.Delete;
                         break;
                     default:
