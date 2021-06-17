@@ -8,7 +8,8 @@ namespace mango.product.api.Models
 {
     public class Response<T>
     {
-        public IEnumerable<KeyValuePair<String, IEnumerable<String>>> ErrorMessages { get; set; } = Enumerable.Empty<KeyValuePair<String, IEnumerable<String>>>();
+        private static Dictionary<String,List<String>> empty=new Dictionary<String, List<String>>();
+        public IDictionary<String, List<String>> ErrorMessages { get; set; } = empty;
         public T Result { get; set; }
     }
 }
