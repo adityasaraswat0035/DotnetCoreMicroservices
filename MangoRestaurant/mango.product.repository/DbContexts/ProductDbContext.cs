@@ -10,11 +10,15 @@ namespace mango.product.repository.DbContexts
 {
     public class ProductDbContext : DbContext
     {
-        public ProductDbContext(DbContextOptions<ProductDbContext> dbContextOptions):base(dbContextOptions)
+        public ProductDbContext(DbContextOptions<ProductDbContext> dbContextOptions) : base(dbContextOptions)
         {
 
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+        }
     }
 }

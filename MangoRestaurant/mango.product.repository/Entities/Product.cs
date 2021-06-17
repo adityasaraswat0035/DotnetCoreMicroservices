@@ -45,6 +45,7 @@ namespace mango.product.repository.Entities
         /// </summary>
         [Column("CategoryId")]
         [ForeignKey(nameof(Category))]
+        [Required]
         public int CategoryId { get; set; }
 
         /// <summary>
