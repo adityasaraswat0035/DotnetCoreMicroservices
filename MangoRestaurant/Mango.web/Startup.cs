@@ -1,3 +1,6 @@
+using mango.web.Configuration;
+using mango.web.Contracts;
+using mango.web.Services.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +27,9 @@ namespace Mango.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddHttpClient<IProductService, ProductService>();
+            services.AddSingleton(Configuration.GetValue<ServicesUrl>("ServicesUrl"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
