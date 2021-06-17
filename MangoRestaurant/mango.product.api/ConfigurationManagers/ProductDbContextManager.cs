@@ -15,11 +15,8 @@ namespace mango.product.api.ConfigurationManagers
     {
         public override void ConfigureService(IServiceCollection services)
         {
-            services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProductApiDatabase"),
-                sqlOptions =>
-                {
-                    sqlOptions.MigrationsAssembly(typeof(ProductApiDatabaseMigration).Assembly.FullName);
-                }));
+            services.AddDbContext<ProductDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("ProductApiDatabase")));
         }
     }
 }
