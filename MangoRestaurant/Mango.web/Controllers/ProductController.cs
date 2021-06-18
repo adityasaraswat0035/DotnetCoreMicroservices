@@ -1,4 +1,5 @@
 ﻿using mango.web.Contracts;
+using mango.web.Services.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,19 @@ namespace mango.web.Controllers
         {
             this.productService = productService;
         }
-        public async  Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            List<ProductDto> productDtos = new List<ProductDto>();
+            try
+            {
+                productDtos = await productService.GetProductAsync<List<ProductDto>>();
+
+            }
+            catch (Exception)
+            {
+               //log the error
+            }
+            return View(productDtos);
         }
     }
 }
