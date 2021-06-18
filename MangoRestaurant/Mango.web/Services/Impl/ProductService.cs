@@ -1,6 +1,7 @@
 ﻿using mango.web.Configuration;
 using mango.web.Contracts;
 using mango.web.Services.Models;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,10 @@ namespace mango.web.Services.Impl
         private readonly IHttpClientFactory httpClientFactory;
         private readonly ServicesUrl services;
 
-        public ProductService(IHttpClientFactory httpClientFactory, ServicesUrl services) : base(httpClientFactory)
+        public ProductService(IHttpClientFactory httpClientFactory, IOptions<ServicesUrl> services) : base(httpClientFactory)
         {
             this.httpClientFactory = httpClientFactory;
-            this.services = services;
+            this.services = services.Value;
         }
         public async Task<T> CreateProductAsync<T>(ProductDto productDto)
         {

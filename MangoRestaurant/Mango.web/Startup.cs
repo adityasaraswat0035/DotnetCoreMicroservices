@@ -29,7 +29,7 @@ namespace Mango.web
             services.AddControllersWithViews();
             services.AddScoped<IProductService, ProductService>();
             services.AddHttpClient<IProductService, ProductService>();
-            services.AddSingleton(Configuration.GetValue<ServicesUrl>("ServicesUrl"));
+            services.Configure<ServicesUrl>(options => Configuration.GetSection("ServicesUrl").Bind(options));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
