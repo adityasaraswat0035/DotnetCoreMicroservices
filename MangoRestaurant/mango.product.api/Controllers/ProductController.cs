@@ -3,7 +3,6 @@ using mango.product.api.Controllers.Base;
 using mango.product.api.Models;
 using mango.product.contract.contracts;
 using mango.product.contract.dtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace mango.product.api.Controllers
 {
-    [Route("api/products")]
+    [Route("api/product")]
     [ApiController]
     public class ProductController : ApiBaseController
     {

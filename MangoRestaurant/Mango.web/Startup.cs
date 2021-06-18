@@ -27,9 +27,9 @@ namespace Mango.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<IProductService, ProductService>();
-            services.AddHttpClient<IProductService, ProductService>();
             services.Configure<ServicesUrl>(options => Configuration.GetSection("ServicesUrl").Bind(options));
+            services.AddHttpClient();
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

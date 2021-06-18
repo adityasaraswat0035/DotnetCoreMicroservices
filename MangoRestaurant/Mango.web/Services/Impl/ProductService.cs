@@ -2,12 +2,8 @@
 using mango.web.Contracts;
 using mango.web.Services.Models;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
-
+using System.Net.Http;
 
 namespace mango.web.Services.Impl
 {
@@ -15,7 +11,6 @@ namespace mango.web.Services.Impl
     {
         private readonly IHttpClientFactory httpClientFactory;
         private readonly ServicesUrl services;
-
         public ProductService(IHttpClientFactory httpClientFactory, IOptions<ServicesUrl> services) : base(httpClientFactory)
         {
             this.httpClientFactory = httpClientFactory;

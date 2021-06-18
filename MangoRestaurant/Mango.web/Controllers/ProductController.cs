@@ -1,9 +1,12 @@
-﻿using mango.web.Contracts;
+﻿using mango.web.Configuration;
+using mango.web.Contracts;
 using mango.web.Services.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace mango.web.Controllers
@@ -15,6 +18,7 @@ namespace mango.web.Controllers
         {
             this.productService = productService;
         }
+
         public async Task<IActionResult> Index()
         {
             List<ProductDto> productDtos = new List<ProductDto>();

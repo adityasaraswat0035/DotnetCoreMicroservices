@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace mango.web.Services.Impl
 {
-    public class BaseService : IBaseService
+    public abstract class BaseService : IBaseService
     {
         private readonly IHttpClientFactory httpClientFactory;
         public BaseService(IHttpClientFactory httpClientFactory)
