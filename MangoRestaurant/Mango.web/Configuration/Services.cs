@@ -8,6 +8,8 @@ namespace mango.web.Configuration
     public class ServicesUrl
     {
         public String ProductApiBase { get; set; }
+        public String CategoryApiBase { get; set; }
+        
     }
     public enum RequestType
     {

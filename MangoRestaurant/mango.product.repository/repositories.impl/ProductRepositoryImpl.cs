@@ -49,8 +49,16 @@ namespace mango.product.repository.repositories.impl
             {
                 productDbContext.Products.Add(product);
             }
-            await productDbContext.SaveChangesAsync();
-            return product;
+            try
+            {
+
+                await productDbContext.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            } return product;
         }
     }
 }

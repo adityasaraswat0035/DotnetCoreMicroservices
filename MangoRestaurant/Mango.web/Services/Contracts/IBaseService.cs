@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace mango.web.Contracts
+namespace mango.web.Services.Contracts
 {
-    public interface IBaseService:IDisposable
+    public interface IBaseService : IDisposable
     {
         Task<T> SendAsync<T>(ApiRequest request);
     }

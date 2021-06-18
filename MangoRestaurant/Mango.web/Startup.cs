@@ -1,5 +1,5 @@
 using mango.web.Configuration;
-using mango.web.Contracts;
+using mango.web.Services.Contracts;
 using mango.web.Services.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +30,7 @@ namespace Mango.web
             services.Configure<ServicesUrl>(options => Configuration.GetSection("ServicesUrl").Bind(options));
             services.AddHttpClient();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

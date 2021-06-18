@@ -15,11 +15,13 @@ namespace mango.product.manager
     public class ProductManagerImpl : ProductManager
     {
         private readonly ProductRepository productRepository;
+        private readonly CategoryRepository categoryRepository;
         private readonly IMapper mapper;
 
-        public ProductManagerImpl(ProductRepository productRepository, IMapper mapper)
+        public ProductManagerImpl(ProductRepository productRepository, CategoryRepository categoryRepository, IMapper mapper)
         {
             this.productRepository = productRepository;
+            this.categoryRepository = categoryRepository;
             this.mapper = mapper;
         }
 
@@ -46,8 +48,13 @@ namespace mango.product.manager
         public async Task<ProductDto> SaveProductAsync(ProductDto productDto)
         {
             var product = mapper.Map<Product>(productDto);
-            var savedProduct = await productRepository.SaveAsync(product);
-            return mapper.Map<ProductDto>(savedProduct);
+            var category = await categoryRepository.GetAsync(product.Category.Id);
+            if (category != null)
+            {
+                product.Category = category;
+            }
+            await productRepository.SaveAsync(product);
+            return mapper.Map<ProductDto>(product);
         }
     }
 }

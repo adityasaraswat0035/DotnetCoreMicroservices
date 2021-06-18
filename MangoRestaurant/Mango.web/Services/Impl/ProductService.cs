@@ -1,9 +1,9 @@
 ﻿using mango.web.Configuration;
-using mango.web.Contracts;
 using mango.web.Services.Models;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 using System.Net.Http;
+using mango.web.Services.Contracts;
 
 namespace mango.web.Services.Impl
 {

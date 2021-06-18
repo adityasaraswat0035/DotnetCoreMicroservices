@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace mango.web.Contracts
+namespace mango.web.Services.Contracts
 {
-    public interface IProductService:IBaseService
+    public interface IProductService : IBaseService
     {
         Task<T> GetProductAsync<T>();
         Task<T> GetProductAsync<T>(int productId);
