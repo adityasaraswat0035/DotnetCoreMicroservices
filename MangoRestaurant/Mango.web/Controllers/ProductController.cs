@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using mango.web.Contracts;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,12 @@ namespace mango.web.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        private readonly IProductService productService;
+        public ProductController(IProductService productService)
+        {
+            this.productService = productService;
+        }
+        public async  Task<IActionResult> Index()
         {
             return View();
         }
