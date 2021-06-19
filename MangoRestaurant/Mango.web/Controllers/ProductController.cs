@@ -2,6 +2,7 @@
 using mango.web.Services.Contracts;
 using mango.web.Services.Models;
 using mango.web.ViewModels;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
@@ -28,6 +29,7 @@ namespace mango.web.Controllers
             List<ProductDto> productDtos = new List<ProductDto>();
             try
             {
+               var token =await HttpContext.GetTokenAsync("access_token");
                 productDtos = await productService.GetProductAsync<List<ProductDto>>();
 
             }
