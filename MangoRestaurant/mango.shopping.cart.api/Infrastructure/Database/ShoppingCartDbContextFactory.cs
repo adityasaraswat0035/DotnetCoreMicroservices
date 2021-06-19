@@ -10,7 +10,7 @@ namespace mango.shopping.cart.api.Infrastructure.Database
         public ShoppingCartDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ShoppingCartDbContext>();
-            optionsBuilder.UseSqlServer("Server=localhost;Database=MangoProductApi;Trusted_Connection=true;MultipleActiveResultSets=true",
+            optionsBuilder.UseSqlServer("Server=localhost;Database=MangoShoppingCartApi;Trusted_Connection=true;MultipleActiveResultSets=true",
              sqlOptions =>
              {
                  sqlOptions.MigrationsAssembly(typeof(ShoppingCartApiDatabaseMigration).Assembly.FullName);
