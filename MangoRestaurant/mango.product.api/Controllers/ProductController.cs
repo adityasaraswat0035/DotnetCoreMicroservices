@@ -15,7 +15,7 @@ namespace mango.product.api.Controllers
 {
     [Route("api/product")]
     [ApiController]
-    [Authorize]
+    [Authorize(Policy = "mango")]
     public class ProductController : ApiBaseController
     {
         private ProductManager productManager;

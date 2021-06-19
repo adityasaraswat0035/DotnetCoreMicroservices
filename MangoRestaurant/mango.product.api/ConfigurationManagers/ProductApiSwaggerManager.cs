@@ -1,4 +1,5 @@
 ﻿using mango.infrastructure.boilerplate.managers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,33 @@ namespace mango.product.api.ConfigurationManagers
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "mango.product.api", Version = "v1" });
+                c.EnableAnnotations();
+                c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme()
+                {
+                    Description = @$"Enter '{JwtBearerDefaults.AuthenticationScheme}' [space] and your token",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = JwtBearerDefaults.AuthenticationScheme
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme()
+                                    {
+                                        Reference= new OpenApiReference()
+                                        {
+                                            Type=ReferenceType.SecurityScheme,
+                                            Id=JwtBearerDefaults.AuthenticationScheme
+                                        },
+                                        Scheme="oauth2",
+                                        Name=JwtBearerDefaults.AuthenticationScheme,
+                                        In=ParameterLocation.Header
+
+                                    }
+                        ,new List<String>()
+                    }
+                });
             });
         }
     }
