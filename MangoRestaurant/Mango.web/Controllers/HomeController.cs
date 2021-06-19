@@ -33,6 +33,13 @@ namespace Mango.web.Controllers
              return View(list);
         }
         [Authorize]
+        public async Task<IActionResult> Details(int proudctId)
+        {
+            ProductDto product = new ProductDto();
+            product = await productService.GetProductAsync<ProductDto>(proudctId,await HttpContext.GetTokenAsync("access_token"));
+            return View(product);
+        }
+        [Authorize]
         public IActionResult Login()
         {
             return RedirectToAction(nameof(Index));
