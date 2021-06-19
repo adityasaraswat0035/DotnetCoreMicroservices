@@ -15,6 +15,6 @@ namespace mango.product.contract.contracts
 
         Task<ProductDto> SaveProductAsync(ProductDto productDto);
 
-        Task DeleteProductAsync(int productId);
+        Task<ProductDto> DeleteProductAsync(int productId);
     }
 }

@@ -14,6 +14,6 @@ namespace mango.product.repository.repositories
 
         Task<Product> SaveAsync(Product product);
 
-        Task DeleteAsync(int productId);
+        Task<Product> DeleteAsync(int productId);
     }
 }

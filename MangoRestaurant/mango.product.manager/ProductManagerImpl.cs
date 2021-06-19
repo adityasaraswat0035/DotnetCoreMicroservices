@@ -25,9 +25,10 @@ namespace mango.product.manager
             this.mapper = mapper;
         }
 
-        public Task DeleteProductAsync(int productId)
+        public async Task<ProductDto> DeleteProductAsync(int productId)
         {
-            return productRepository.DeleteAsync(productId);
+            var product= await productRepository.DeleteAsync(productId);
+            return mapper.Map<ProductDto>(product);
         }
 
         public async Task<Optional<ProductDto>> GetProductAsync(int productId)

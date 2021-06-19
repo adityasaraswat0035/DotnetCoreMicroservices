@@ -33,7 +33,7 @@ namespace mango.product.api.Controllers
             return OptionalOK(await productManager.GetProductAsync(productId).ConfigureAwait(false));
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]ProductDto productDto)
+        public async Task<IActionResult> Post([FromBody] ProductDto productDto)
         {
             return Ok(await productManager.SaveProductAsync(productDto).ConfigureAwait(false));
         }
@@ -46,8 +46,7 @@ namespace mango.product.api.Controllers
         [Route("{productId:int}")]
         public async Task<IActionResult> Delete(int productId)
         {
-            await productManager.DeleteProductAsync(productId).ConfigureAwait(false);
-            return NoContent();
+            return Ok(await productManager.DeleteProductAsync(productId).ConfigureAwait(false));
         }
     }
 }

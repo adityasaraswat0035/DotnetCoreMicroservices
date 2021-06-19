@@ -47,7 +47,6 @@ namespace mango.web.Controllers
                 return Json("Category does not exits");
 
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateProduct([FromForm] ProductViewModel model)
@@ -104,6 +103,98 @@ namespace mango.web.Controllers
                 //log Exception
                 return Enumerable.Empty<CategoryDto>();
             }
+        }
+
+        public async Task<IActionResult> EditProduct(int productId)
+        {
+            ProductDto productDto = await productService.GetProductAsync<ProductDto>(productId);
+            if (productDto != null)
+            {
+                ProductViewModel productViewModel = new ProductViewModel()
+                {
+                    Id = productDto.Id,
+                    Category = productDto.Category.Id,
+                    Categories = await GetCategories(),
+                    Description = productDto.Description,
+                    Name = productDto.Name,
+                    Price = productDto.Price,
+                };
+                return View(productViewModel);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProduct(ProductViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var imageName = model.Image.FileName; //Process image and save it to AWS
+                    ProductDto productDto = new ProductDto()
+                    {
+                        Id = model.Id,
+                        Category = new CategoryDto() { Id = model.Category },
+                        Name = model.Name,
+                        Description = model.Description,
+                        Price = model.Price,
+                        ImageUrl = imageName
+                    };
+                    productDto = await productService.CreateProductAsync<ProductDto>(productDto);
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    model.Categories = await GetCategories();
+                    return View(model);
+                }
+            }
+            else
+            {
+                model.Categories = await GetCategories();
+                return View(model);
+            }
+        }
+
+        public async Task<IActionResult> DeleteProduct(int productId)
+        {
+            ProductDto productDto = await productService.GetProductAsync<ProductDto>(productId);
+            if (productDto != null)
+            {
+                ProductViewModel productViewModel = new ProductViewModel()
+                {
+                    Id = productDto.Id,
+                    Category = productDto.Category.Id,
+                    Categories = await GetCategories(),
+                    Description = productDto.Description,
+                    Name = productDto.Name,
+                    Price = productDto.Price,
+                };
+                return View(productViewModel);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteProduct(ProductViewModel model)
+        {
+            try
+            {
+                int productId = model.Id;
+                _ = await productService.DeleteProductAsync<ProductDto>(productId);
+            }
+            catch (Exception ex)
+            {
+                //logg execption 
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }
