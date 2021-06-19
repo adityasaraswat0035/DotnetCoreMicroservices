@@ -13,8 +13,15 @@ using System.Threading.Tasks;
 namespace mango.shopping.cart.repository.Entities
 {
     [Table(name: "Product", Schema = "dbo")]
-    public class Product : BaseEntity<int>
+    public class Product
     {
+        /// <summary>
+        /// Mandatory Product Name
+        /// </summary>
+        [Column(name: "Id")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        public int Id { get; set; }
         /// <summary>
         /// Mandatory Product Name
         /// </summary>
@@ -39,5 +46,13 @@ namespace mango.shopping.cart.repository.Entities
         /// </summary>
         [Column("ImageUrl")]
         public string ImageUrl { get; set; }
+
+        [Column("CategoryId")]
+        public int CategoryId { get; set; }
+
+        [Column("CategoryName")]
+
+        public string CategoryName { get; set; }
+
     }
 }
