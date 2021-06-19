@@ -21,17 +21,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.manager", "ma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migrations", "migrations", "{6D38B533-D350-49D2-8AB6-02BD512BE3F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.product.api.db", "mango.product.api.db\mango.product.api.db.csproj", "{A144C39B-95D8-479D-BC5B-795A38EEA4AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.api.db", "mango.product.api.db\mango.product.api.db.csproj", "{A144C39B-95D8-479D-BC5B-795A38EEA4AD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contracts", "contracts", "{8D86B16A-199F-4A72-9732-3BFEA7765F29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.product.contract", "mango.product.contract\mango.product.contract.csproj", "{4C26B749-DA80-480F-BF67-1299D6129673}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.contract", "mango.product.contract\mango.product.contract.csproj", "{4C26B749-DA80-480F-BF67-1299D6129673}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{20B0FDB3-F25D-4266-9489-716592056DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.infrstructure.common", "mango.infrstructure.common\mango.infrstructure.common.csproj", "{4CAA7198-0D14-4FDA-99EB-7A6F91123263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.infrstructure.common", "mango.infrstructure.common\mango.infrstructure.common.csproj", "{4CAA7198-0D14-4FDA-99EB-7A6F91123263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.infrastructure.boilerplate", "mango.infrastructure.boilerplate\mango.infrastructure.boilerplate.csproj", "{62E11FB6-97E7-4DE7-8E5A-66C986796ED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.infrastructure.boilerplate", "mango.infrastructure.boilerplate\mango.infrastructure.boilerplate.csproj", "{62E11FB6-97E7-4DE7-8E5A-66C986796ED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identityserver", "identityserver", "{0DE43444-5EB8-4BF2-8227-EB6B7AB54F56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.identity.server", "mango.identity.server\mango.identity.server.csproj", "{557E7F4D-6842-4A8B-846F-7E48524DA49B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,10 @@ Global
 		{62E11FB6-97E7-4DE7-8E5A-66C986796ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E11FB6-97E7-4DE7-8E5A-66C986796ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E11FB6-97E7-4DE7-8E5A-66C986796ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557E7F4D-6842-4A8B-846F-7E48524DA49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557E7F4D-6842-4A8B-846F-7E48524DA49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557E7F4D-6842-4A8B-846F-7E48524DA49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557E7F4D-6842-4A8B-846F-7E48524DA49B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +92,7 @@ Global
 		{4C26B749-DA80-480F-BF67-1299D6129673} = {8D86B16A-199F-4A72-9732-3BFEA7765F29}
 		{4CAA7198-0D14-4FDA-99EB-7A6F91123263} = {20B0FDB3-F25D-4266-9489-716592056DDF}
 		{62E11FB6-97E7-4DE7-8E5A-66C986796ED2} = {20B0FDB3-F25D-4266-9489-716592056DDF}
+		{557E7F4D-6842-4A8B-846F-7E48524DA49B} = {0DE43444-5EB8-4BF2-8227-EB6B7AB54F56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35FAD2FD-8A40-4DD1-B47C-5E9CA11E1A86}
