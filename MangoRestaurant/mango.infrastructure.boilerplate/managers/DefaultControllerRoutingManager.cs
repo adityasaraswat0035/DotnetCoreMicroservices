@@ -22,6 +22,7 @@ namespace mango.infrastructure.boilerplate.managers
         {
             app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

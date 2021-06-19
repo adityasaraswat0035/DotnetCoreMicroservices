@@ -29,8 +29,7 @@ namespace mango.web.Controllers
             List<ProductDto> productDtos = new List<ProductDto>();
             try
             {
-               var token =await HttpContext.GetTokenAsync("access_token");
-                productDtos = await productService.GetProductAsync<List<ProductDto>>();
+                productDtos = await productService.GetProductAsync<List<ProductDto>>(await HttpContext.GetTokenAsync("access_token"));
 
             }
             catch (Exception)
@@ -42,7 +41,7 @@ namespace mango.web.Controllers
         [HttpGet, HttpPost]
         public async Task<IActionResult> VerifyCategory(int Category)
         {
-            var category = await categoryService.GetCategoryAsync<CategoryDto>(Category);
+            var category = await categoryService.GetCategoryAsync<CategoryDto>(Category,await HttpContext.GetTokenAsync("access_token"));
             if (category != null)
                 return Json(true);
             else
@@ -66,7 +65,7 @@ namespace mango.web.Controllers
                         Price = model.Price,
                         ImageUrl = imageName
                     };
-                    productDto = await productService.CreateProductAsync<ProductDto>(productDto);
+                    productDto = await productService.CreateProductAsync<ProductDto>(productDto, await HttpContext.GetTokenAsync("access_token"));
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
@@ -92,7 +91,7 @@ namespace mango.web.Controllers
         {
             try
             {
-                var categories = await categoryService.GetCategoryAsync<IEnumerable<CategoryDto>>();
+                var categories = await categoryService.GetCategoryAsync<IEnumerable<CategoryDto>>(await HttpContext.GetTokenAsync("access_token"));
 
                 if (categories != null && categories.Any())
                 {
@@ -109,7 +108,7 @@ namespace mango.web.Controllers
 
         public async Task<IActionResult> EditProduct(int productId)
         {
-            ProductDto productDto = await productService.GetProductAsync<ProductDto>(productId);
+            ProductDto productDto = await productService.GetProductAsync<ProductDto>(productId, await HttpContext.GetTokenAsync("access_token"));
             if (productDto != null)
             {
                 ProductViewModel productViewModel = new ProductViewModel()
@@ -146,7 +145,7 @@ namespace mango.web.Controllers
                         Price = model.Price,
                         ImageUrl = imageName
                     };
-                    productDto = await productService.CreateProductAsync<ProductDto>(productDto);
+                    productDto = await productService.CreateProductAsync<ProductDto>(productDto, await HttpContext.GetTokenAsync("access_token"));
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
@@ -164,7 +163,7 @@ namespace mango.web.Controllers
 
         public async Task<IActionResult> DeleteProduct(int productId)
         {
-            ProductDto productDto = await productService.GetProductAsync<ProductDto>(productId);
+            ProductDto productDto = await productService.GetProductAsync<ProductDto>(productId, await HttpContext.GetTokenAsync("access_token"));
             if (productDto != null)
             {
                 ProductViewModel productViewModel = new ProductViewModel()
@@ -190,7 +189,7 @@ namespace mango.web.Controllers
             try
             {
                 int productId = model.Id;
-                _ = await productService.DeleteProductAsync<ProductDto>(productId);
+                _ = await productService.DeleteProductAsync<ProductDto>(productId, await HttpContext.GetTokenAsync("access_token"));
             }
             catch (Exception ex)
             {

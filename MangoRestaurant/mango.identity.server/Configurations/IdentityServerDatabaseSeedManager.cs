@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace mango.product.api.ConfigurationManagers
+namespace mango.identity.server.Configurations
 {
     public static class IdentityServerDatabaseSeedManager
     {

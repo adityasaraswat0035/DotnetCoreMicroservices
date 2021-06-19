@@ -31,6 +31,10 @@ namespace mango.web.Services.Impl
                 client.DefaultRequestHeaders.Clear();
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                if (!string.IsNullOrWhiteSpace(request.AccessToken))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.AccessToken);
+                }
                 message.RequestUri = new Uri(request.Url);
                 if (request.Body != null)
                 {

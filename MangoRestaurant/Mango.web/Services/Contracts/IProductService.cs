@@ -8,10 +8,10 @@ namespace mango.web.Services.Contracts
 {
     public interface IProductService : IBaseService
     {
-        Task<T> GetProductAsync<T>();
-        Task<T> GetProductAsync<T>(int productId);
-        Task<T> CreateProductAsync<T>(ProductDto productDto);
-        Task<T> UpdateProductAsync<T>(ProductDto productDto);
-        Task<T> DeleteProductAsync<T>(int productId);
+        Task<T> GetProductAsync<T>(string token);
+        Task<T> GetProductAsync<T>(int productId, string token);
+        Task<T> CreateProductAsync<T>(ProductDto productDto, string token);
+        Task<T> UpdateProductAsync<T>(ProductDto productDto, string token);
+        Task<T> DeleteProductAsync<T>(int productId, string token);
     }
 }

@@ -25,7 +25,7 @@ namespace mango.web.Validations.Attributes
                 ICategoryService categoryService = validationContext.GetService(typeof(ICategoryService)) as ICategoryService;
                 if (categoryService != null)
                 {
-                    var category = categoryService.GetCategoryAsync<CategoryDto>(fieldValue).GetAwaiter().GetResult();
+                    var category = categoryService.GetCategoryAsync<CategoryDto>(fieldValue,null).GetAwaiter().GetResult();
                     if (category != null)
                         return ValidationResult.Success;
                     else

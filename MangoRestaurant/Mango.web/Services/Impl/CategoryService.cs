@@ -18,7 +18,7 @@ namespace mango.web.Services.Impl
         { 
             this.services = services.Value;
         }
-        public Task<T> GetCategoryAsync<T>()
+        public Task<T> GetCategoryAsync<T>(string token)
         {
             return SendAsync<T>(new ApiRequest()
             {
@@ -28,7 +28,7 @@ namespace mango.web.Services.Impl
             }) ;
         }
 
-        public Task<T> GetCategoryAsync<T>(int categoryId)
+        public Task<T> GetCategoryAsync<T>(int categoryId, string token)
         {
             return SendAsync<T>(new ApiRequest()
             {

@@ -15,8 +15,8 @@ using mango.identity.server.Models;
 using Microsoft.AspNetCore.Identity;
 using Duende.IdentityServer.AspNetIdentity;
 using mango.identity.server.Configurations;
-using mango.product.api.ConfigurationManagers;
 using Microsoft.Extensions.Logging;
+using Duende.IdentityServer.Services;
 
 namespace mango.identity.server
 {
@@ -51,6 +51,7 @@ namespace mango.identity.server
             .AddInMemoryClients(IdentityServerConfigurations.Clients)
             .AddAspNetIdentity<ApplicationUser>();
             builder.AddDeveloperSigningCredential();
+            services.AddScoped<IProfileService, mango.identity.server.Services.ProfileService>();
             services.AddControllersWithViews();
         }
 
