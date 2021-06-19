@@ -1,8 +1,10 @@
 ﻿using mango.infrstructure.common.Wrappers;
 using mango.product.api.Controllers.Base;
+using mango.product.api.Infrastructure;
 using mango.product.api.Models;
 using mango.product.contract.contracts;
 using mango.product.contract.dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace mango.product.api.Controllers
 {
     [Route("api/product")]
     [ApiController]
+    [Authorize]
     public class ProductController : ApiBaseController
     {
         private ProductManager productManager;
@@ -43,6 +46,7 @@ namespace mango.product.api.Controllers
             return Ok(await productManager.SaveProductAsync(productDto).ConfigureAwait(false));
         }
         [HttpDelete]
+        [Authorize(Roles = Constants.Admin)]
         [Route("{productId:int}")]
         public async Task<IActionResult> Delete(int productId)
         {
