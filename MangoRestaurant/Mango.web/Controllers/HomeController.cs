@@ -1,4 +1,7 @@
-﻿using Mango.web.Models;
+﻿using mango.web.Services.Contracts;
+using mango.web.Services.Models;
+using Mango.web.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
@@ -15,15 +18,19 @@ namespace Mango.web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IProductService productService)
         {
             _logger = logger;
+            this.productService = productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+             List<ProductDto> list = new List<ProductDto>();
+             list =await productService.GetProductAsync<List<ProductDto>>(await HttpContext.GetTokenAsync("access_token"));
+             return View(list);
         }
         [Authorize]
         public IActionResult Login()

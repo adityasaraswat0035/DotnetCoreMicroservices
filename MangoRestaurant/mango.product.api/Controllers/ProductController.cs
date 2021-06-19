@@ -25,6 +25,7 @@ namespace mango.product.api.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             return Ok(await productManager.GetProductsAsync().ConfigureAwait(false));
