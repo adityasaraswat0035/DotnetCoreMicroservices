@@ -1,4 +1,7 @@
 ﻿using Mango.web.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -22,6 +25,17 @@ namespace Mango.web.Controllers
         {
             return View();
         }
+        [Authorize]
+        public IActionResult Login()
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult LogOut()
+        {
+            return SignOut(CookieAuthenticationDefaults.AuthenticationScheme, OpenIdConnectDefaults.AuthenticationScheme);
+        }
+
 
         public IActionResult Privacy()
         {

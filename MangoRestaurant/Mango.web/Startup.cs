@@ -44,7 +44,7 @@ namespace Mango.web
             })
             .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
             {
-                options.Authority = Configuration["ServicesUrl:IdentityServer"];
+                options.Authority = Configuration["ServicesUrl:IdentityServerApiBase"];
                 options.GetClaimsFromUserInfoEndpoint=true;
                 options.ClientId = "mango";
                 options.ClientSecret = "secret";

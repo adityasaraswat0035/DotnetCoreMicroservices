@@ -26,16 +26,18 @@ namespace mango.identity.server.Configurations
                 ClientSecrets={new Secret("secret".Sha256())},
                 AllowedGrantTypes=GrantTypes.ClientCredentials,
                 AllowedScopes={"read","write","profile"} },
+
             new Client(){ClientId="mango",
+                Enabled=true,
                 ClientSecrets={new Secret("secret".Sha256())},
-                AllowedGrantTypes=GrantTypes.Code,
+                AllowedGrantTypes=GrantTypes.CodeAndClientCredentials,
                 AllowedScopes=new List<string>(){
                 IdentityServerConstants.StandardScopes.OpenId,
                 IdentityServerConstants.StandardScopes.Profile,
                 IdentityServerConstants.StandardScopes.Email,
                 "mango"
                 },
-                RedirectUris={ "https://localhost:44331/sigin-oidc" },
+                RedirectUris={ "https://localhost:44331/signin-oidc" },
                 PostLogoutRedirectUris={"https://localhost:44331/sign-out-callback-oidc"}
 
             }

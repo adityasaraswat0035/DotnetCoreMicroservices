@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Identity;
 using Duende.IdentityServer.AspNetIdentity;
 using mango.identity.server.Configurations;
 using mango.product.api.ConfigurationManagers;
+using Microsoft.Extensions.Logging;
 
 namespace mango.identity.server
 {
@@ -54,7 +55,7 @@ namespace mango.identity.server
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
