@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using mango.shopping.cart.contracts.dtos;
+using mango.shopping.cart.repository.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace mango.shopping.cart.manager.Mappers.Configurations
         {
             var mappingConfig = new MapperConfiguration(configure =>
             {
-
+                configure.CreateMap<ProductDto, Product>().ReverseMap();
+                configure.CreateMap<CartHeaderDto, CartHeader>().ReverseMap();
+                configure.CreateMap<CartDetailDto, CartDetail>().ReverseMap();
+                configure.CreateMap<CartDto, CartDto>().ReverseMap();
             });
             return mappingConfig.CreateMapper(); ;
         }
