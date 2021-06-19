@@ -19,4 +19,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\mango.infrastructure.boilerplate\mango.infrastructure.boilerplate.csproj" />
+    <ProjectReference Include="..\mango.shopping.cart.api.db\mango.shopping.cart.api.db.csproj" />
+    <ProjectReference Include="..\mango.shopping.cart.manager\mango.shopping.cart.manager.csproj" />
+  </ItemGroup>
+
 </Project>
