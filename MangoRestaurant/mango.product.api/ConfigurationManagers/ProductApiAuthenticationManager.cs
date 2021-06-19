@@ -11,6 +11,7 @@ namespace mango.product.api.ConfigurationManagers
 {
     public class ProductApiAuthenticationManager: DefaultAuthenticationManager
     {
+
         public override void ConfigureService(IServiceCollection services)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

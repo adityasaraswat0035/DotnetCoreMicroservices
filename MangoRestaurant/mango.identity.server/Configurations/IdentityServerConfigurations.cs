@@ -23,11 +23,11 @@ namespace mango.identity.server.Configurations
         public static IEnumerable<Client> Clients => new List<Client>()
         {
             new Client(){ClientId="client",
-                ClientSecrets={new Secret("secrete".Sha256())},
+                ClientSecrets={new Secret("secret".Sha256())},
                 AllowedGrantTypes=GrantTypes.ClientCredentials,
                 AllowedScopes={"read","write","profile"} },
             new Client(){ClientId="mango",
-                ClientSecrets={new Secret("secrete".Sha256())},
+                ClientSecrets={new Secret("secret".Sha256())},
                 AllowedGrantTypes=GrantTypes.Code,
                 AllowedScopes=new List<string>(){
                 IdentityServerConstants.StandardScopes.OpenId,
