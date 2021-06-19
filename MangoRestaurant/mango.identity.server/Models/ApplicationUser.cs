@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace mango.identity.server.Models
 {
-    [Table(name:"Users")]
     public class ApplicationUser:IdentityUser
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

@@ -15,6 +15,7 @@ using mango.identity.server.Models;
 using Microsoft.AspNetCore.Identity;
 using Duende.IdentityServer.AspNetIdentity;
 using mango.identity.server.Configurations;
+using mango.product.api.ConfigurationManagers;
 
 namespace mango.identity.server
 {
@@ -30,10 +31,12 @@ namespace mango.identity.server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbIntializer();
             services.AddDbContext<ApplicationDbContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("IdentiyServerDatabase")));
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddDefaultTokenProviders();
-
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>()
+                    .AddDefaultTokenProviders();
             var builder = services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
@@ -63,6 +66,7 @@ namespace mango.identity.server
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseDbIntializer();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
