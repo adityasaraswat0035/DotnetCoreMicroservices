@@ -3,6 +3,7 @@ using mango.web.Services.Contracts;
 using mango.web.Services.Models;
 using mango.web.ViewModels;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
@@ -160,6 +161,7 @@ namespace mango.web.Controllers
                 return View(model);
             }
         }
+        [Authorize(Roles ="Admin")]
 
         public async Task<IActionResult> DeleteProduct(int productId)
         {
@@ -182,6 +184,7 @@ namespace mango.web.Controllers
                 return RedirectToAction(nameof(Index));
             }
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteProduct(ProductViewModel model)

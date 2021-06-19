@@ -33,7 +33,7 @@ namespace mango.web.Services.Impl
             {
                 Type = RequestType.DELETE,
                 Url = $"{services.ProductApiBase}/api/product/{productId}",
-                AccessToken = ""
+                AccessToken = token
             });
         }
 
@@ -43,7 +43,7 @@ namespace mango.web.Services.Impl
             {
                 Type = RequestType.GET,
                 Url = $"{services.ProductApiBase}/api/product/",
-                AccessToken = ""
+                AccessToken = token
             });
         }
 
@@ -53,7 +53,7 @@ namespace mango.web.Services.Impl
             {
                 Type = RequestType.GET,
                 Url = $"{services.ProductApiBase}/api/product/{productId}",
-                AccessToken = ""
+                AccessToken = token
             });
         }
 
@@ -64,7 +64,7 @@ namespace mango.web.Services.Impl
                 Type = RequestType.PUT,
                 Url = $"{services.ProductApiBase}/api/product",
                 Body = productDto,
-                AccessToken = ""
+                AccessToken = token
             });
         }
     }

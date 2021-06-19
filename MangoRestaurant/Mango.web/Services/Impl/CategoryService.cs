@@ -22,7 +22,7 @@ namespace mango.web.Services.Impl
         {
             return SendAsync<T>(new ApiRequest()
             {
-                AccessToken = "",
+                AccessToken = token,
                 Type = RequestType.GET,
                 Url = $"{services.CategoryApiBase}/api/category"
             }) ;
@@ -32,7 +32,7 @@ namespace mango.web.Services.Impl
         {
             return SendAsync<T>(new ApiRequest()
             {
-                AccessToken = "",
+                AccessToken = token,
                 Type = RequestType.GET,
                 Url = $"{services.CategoryApiBase}/api/category/{categoryId}"
             });
