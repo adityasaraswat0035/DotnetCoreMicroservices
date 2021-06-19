@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.infrastructure.boiler
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identityserver", "identityserver", "{0DE43444-5EB8-4BF2-8227-EB6B7AB54F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.identity.server", "mango.identity.server\mango.identity.server.csproj", "{557E7F4D-6842-4A8B-846F-7E48524DA49B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.identity.server", "mango.identity.server\mango.identity.server.csproj", "{557E7F4D-6842-4A8B-846F-7E48524DA49B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
