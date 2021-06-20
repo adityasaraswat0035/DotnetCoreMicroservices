@@ -37,9 +37,10 @@ namespace mango.shopping.cart.api.Controllers
             return Ok(await shoppingCartManager.CreateUpdateCartAsync(cartDto));
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete(int cartDetailsId)
+        [Route("{cartDetailId}")]
+        public async Task<IActionResult> Delete(int cartDetailId)
         {
-            return Ok(await shoppingCartManager.RemoveItemFromCartAsync(cartDetailsId));
+            return Ok(await shoppingCartManager.RemoveItemFromCartAsync(cartDetailId));
         }
     }
 }

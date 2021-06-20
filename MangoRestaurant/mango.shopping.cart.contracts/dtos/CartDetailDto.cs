@@ -5,6 +5,7 @@ namespace mango.shopping.cart.contracts.dtos
 
     public class CartDetailDto
     {
+        public int Id { get; set; }
         public int CartHeaderId { get; set; }
         public CartHeaderDto CartHeader { get; set; }
         public int ProductId { get; set; }

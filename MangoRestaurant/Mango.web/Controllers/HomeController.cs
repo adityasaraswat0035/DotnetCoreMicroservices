@@ -1,5 +1,4 @@
-﻿using mango.shopping.cart.contracts.dtos;
-using mango.web.Services.Contracts;
+﻿using mango.web.Services.Contracts;
 using mango.web.Services.Models;
 using Mango.web.Models;
 using Microsoft.AspNetCore.Authentication;

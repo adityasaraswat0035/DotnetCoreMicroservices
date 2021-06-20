@@ -51,7 +51,7 @@ namespace mango.shopping.cart.repository.repositories.impl
                     FirstOrDefaultAsync(u => u.Product.Id == cart.CartDetails.FirstOrDefault().Product.Id && u.CartHeaderId == cart.CartHeader.Id);
                 if (cartDetailsFromDb == null)
                 {
-                    cart.CartDetails.FirstOrDefault().CartHeaderId = cartDetailsFromDb.CartHeaderId;
+                    cart.CartDetails.FirstOrDefault().CartHeaderId = userCartInDb.Id;
                     cart.CartDetails.FirstOrDefault().Product = null;
                     shoppingCartDb.CartDetails.Add(cart.CartDetails.FirstOrDefault());
                     await shoppingCartDb.SaveChangesAsync();
