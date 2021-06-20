@@ -33,6 +33,7 @@ namespace Mango.web
             services.Configure<ServicesUrl>(options => Configuration.GetSection("ServicesUrl").Bind(options));
             services.AddHttpClient();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICouponService, CouponService>();
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddAuthentication(options =>
