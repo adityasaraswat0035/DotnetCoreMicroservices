@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using mango.coupon.repository.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace mango.coupon.repository.DbContexts
 {
@@ -8,6 +9,8 @@ namespace mango.coupon.repository.DbContexts
         {
             ChangeTracker.LazyLoadingEnabled = false;
         }
+        DbSet<Coupon> Coupons { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 

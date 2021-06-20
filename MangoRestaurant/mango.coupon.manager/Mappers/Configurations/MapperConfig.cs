@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using mango.coupon.contracts.dtos;
+using mango.coupon.repository.Entities;
 
 namespace mango.coupon.manager.Mappers.Configurations
 {
@@ -8,7 +10,7 @@ namespace mango.coupon.manager.Mappers.Configurations
         {
             var mappingConfig = new MapperConfiguration(configure =>
             {
-
+                configure.CreateMap<CouponDto, Coupon>().ReverseMap();
             });
             return mappingConfig.CreateMapper(); ;
         }
