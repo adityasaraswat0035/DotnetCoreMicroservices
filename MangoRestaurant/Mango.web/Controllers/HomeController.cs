@@ -1,4 +1,5 @@
-﻿using mango.web.Services.Contracts;
+﻿using mango.shopping.cart.contracts.dtos;
+using mango.web.Services.Contracts;
 using mango.web.Services.Models;
 using Mango.web.Models;
 using Microsoft.AspNetCore.Authentication;
@@ -19,26 +20,71 @@ namespace Mango.web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService productService;
+        private readonly ICartService cartService;
 
-        public HomeController(ILogger<HomeController> logger,IProductService productService)
+        public HomeController(ILogger<HomeController> logger, IProductService productService,ICartService cartService)
         {
             _logger = logger;
             this.productService = productService;
+            this.cartService = cartService;
         }
 
         public async Task<IActionResult> Index()
         {
-             List<ProductDto> list = new List<ProductDto>();
-             list =await productService.GetProductAsync<List<ProductDto>>(await HttpContext.GetTokenAsync("access_token"));
-             return View(list);
+            List<ProductDto> list = new List<ProductDto>();
+            list = await productService.GetProductAsync<List<ProductDto>>(await HttpContext.GetTokenAsync("access_token"));
+            return View(list);
         }
         [Authorize]
         public async Task<IActionResult> Details(int proudctId)
         {
             ProductDto product = new ProductDto();
-            product = await productService.GetProductAsync<ProductDto>(proudctId,await HttpContext.GetTokenAsync("access_token"));
+            product = await productService.GetProductAsync<ProductDto>(proudctId, await HttpContext.GetTokenAsync("access_token"));
             return View(product);
         }
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> AddItemToCart(ProductDto productDto)
+        {
+            try
+            {
+                CartDto cartDto = new()
+                {
+                    CartHeader = new CartHeaderDto
+                    {
+                        UserId = User.Claims.Where(x => x.Type == "sub").FirstOrDefault()?.Value
+                    }
+                };
+                CartDetailDto cartDetailDto = new CartDetailDto
+                {
+                    Count = productDto.Count,
+                    ProductId = productDto.Id
+                };
+                string accessToken = await HttpContext.GetTokenAsync("access_token");
+                ProductDto product = await productService.GetProductAsync<ProductDto>(productDto.Id, accessToken);
+                cartDetailDto.Product = new ProductDto()
+                {
+                    Id = product.Id,
+                    Description = product.Description,
+                    Price = product.Price,
+                    CategoryId = product.CategoryId,
+                    CategoryName = product.Category.Name,
+                    ImageUrl = product.ImageUrl
+                };
+
+                cartDto.CartDetails = new List<CartDetailDto> { cartDetailDto };
+                var addToCart = await cartService.AddToCartAsync<CartDto>(cartDto, accessToken);
+                if (addToCart != null) return RedirectToAction(nameof(Index));
+                else return View(productDto);
+            }
+            catch (Exception)
+            {
+                return View(productDto);
+            }
+
+        }
+
+
         [Authorize]
         public IActionResult Login()
         {
