@@ -9,7 +9,8 @@ namespace mango.web.Configuration
     {
         public String ProductApiBase { get; set; }
         public String CategoryApiBase { get; set; }
-        
+        public String ShoppingCartApiBase { get; set; }
+
     }
     public enum RequestType
     {

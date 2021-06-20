@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mango.shopping.cart.contracts.dtos
+namespace mango.web.Services.Models
 {
 
     public class CartHeaderDto
     {
         public string UserId { get; set; }
         public string CouponCode { get; set; }
-        public double CartTotal { get; set; }
     }
 }
