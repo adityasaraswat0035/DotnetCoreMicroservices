@@ -1,6 +1,7 @@
 using mango.web.Configuration;
 using mango.web.Services.Contracts;
 using mango.web.Services.Impl;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -50,6 +51,8 @@ namespace Mango.web
                 options.ClientId = "mango";
                 options.ClientSecret = "secret";
                 options.ResponseType = "code";
+                options.ClaimActions.MapJsonKey("role", "role", "role");
+                options.ClaimActions.MapJsonKey("sub", "sub", "sub");
                 options.TokenValidationParameters.NameClaimType = "name";
                 options.TokenValidationParameters.RoleClaimType = "role";
                 options.Scope.Add("mango");

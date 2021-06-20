@@ -24,7 +24,7 @@ namespace mango.shopping.cart.repository.DbContexts
                 .WithOne(x => x.CartHeader)
                 .HasForeignKey(x => x.CartHeaderId)
                 .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Product>().HasOne<CartDetail>().WithOne(x=>x.Product).HasForeignKey<CartDetail>("ProductId");
+            modelBuilder.Entity<Product>().HasOne<CartDetail>().WithOne(x=>x.Product).HasForeignKey<CartDetail>(x=>x.ProductId);
             
         }
 

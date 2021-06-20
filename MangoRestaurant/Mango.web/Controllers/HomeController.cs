@@ -60,18 +60,19 @@ namespace Mango.web.Controllers
                     Count = productDto.Count,
                     ProductId = productDto.Id
                 };
+
                 string accessToken = await HttpContext.GetTokenAsync("access_token");
                 ProductDto product = await productService.GetProductAsync<ProductDto>(productDto.Id, accessToken);
                 cartDetailDto.Product = new ProductDto()
                 {
                     Id = product.Id,
                     Description = product.Description,
+                    Name=product.Name,
                     Price = product.Price,
-                    CategoryId = product.CategoryId,
+                    CategoryId = product.Category.Id,
                     CategoryName = product.Category.Name,
                     ImageUrl = product.ImageUrl
                 };
-
                 cartDto.CartDetails = new List<CartDetailDto> { cartDetailDto };
                 var addToCart = await cartService.AddToCartAsync<CartDto>(cartDto, accessToken);
                 if (addToCart != null) return RedirectToAction(nameof(Index));

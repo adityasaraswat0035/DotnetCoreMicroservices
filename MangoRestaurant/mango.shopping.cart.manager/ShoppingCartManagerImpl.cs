@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using mango.infrstructure.common.Wrappers;
 using mango.shopping.cart.contracts.contracts;
 using mango.shopping.cart.contracts.dtos;
 using mango.shopping.cart.repository.NonEntities;
@@ -26,15 +27,26 @@ namespace mango.shopping.cart.manager
 
         public async Task<CartDto> CreateUpdateCartAsync(CartDto cartDto)
         {
-            var cart = mapper.Map<Cart>(cartDto);
-            cart = await shoppingCartRepository.CreateUpdateCartAsync(cart);
-            return mapper.Map<CartDto>(cart);
+            try
+            {
+                var cart = mapper.Map<Cart>(cartDto);
+                cart = await shoppingCartRepository.CreateUpdateCartAsync(cart);
+                return mapper.Map<CartDto>(cart);
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
         }
 
-        public async Task<CartDto> GetCartByUserIdAsync(string userId)
+        public async Task<Optional<CartDto>> GetCartByUserIdAsync(string userId)
         {
             var cart = await shoppingCartRepository.GetCartByUserIdAsync(userId);
-            return mapper.Map<CartDto>(cart);
+            if (cart != null)
+                return Optional<CartDto>.Some(mapper.Map<CartDto>(cart));
+            else
+                return Optional<CartDto>.None();
         }
 
         public async Task<bool> RemoveItemFromCartAsync(int CartDetailsId)

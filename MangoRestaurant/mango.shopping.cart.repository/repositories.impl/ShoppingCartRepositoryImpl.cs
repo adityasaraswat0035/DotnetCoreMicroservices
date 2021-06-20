@@ -72,11 +72,18 @@ namespace mango.shopping.cart.repository.repositories.impl
         public async Task<Cart> GetCartByUserIdAsync(string userId)
         {
             var userCart = await shoppingCartDb.CartHeaders.Include(x => x.CartDetail).ThenInclude(x => x.Product).FirstOrDefaultAsync(x => x.UserId == userId);
-            return new Cart()
+            if (userCart == null)
             {
-                CartHeader = userCart,
-                CartDetails = userCart.CartDetail
-            };
+                return null;
+            }
+            else
+            {
+                return new Cart()
+                {
+                    CartHeader = userCart,
+                    CartDetails = userCart?.CartDetail
+                };
+            }
         }
 
         public async Task<bool> RemoveItemFromCartAsync(int CartDetailsId)

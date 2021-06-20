@@ -31,6 +31,7 @@ namespace mango.identity.server.Configurations
                 Enabled=true,
                 ClientSecrets={new Secret("secret".Sha256())},
                 AllowedGrantTypes=GrantTypes.CodeAndClientCredentials,
+                AlwaysIncludeUserClaimsInIdToken=true,
                 AllowedScopes=new List<string>(){
                 IdentityServerConstants.StandardScopes.OpenId,
                 IdentityServerConstants.StandardScopes.Profile,

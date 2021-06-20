@@ -25,7 +25,7 @@ namespace mango.web.Services.Impl
             {
                 Type = RequestType.POST,
                 Body = cartDto,
-                Url = $"{services.ProductApiBase}/api/cart",
+                Url = $"{services.ShoppingCartApiBase}/api/cart",
                 AccessToken = token
             });
         }
@@ -35,7 +35,7 @@ namespace mango.web.Services.Impl
             return await this.SendAsync<T>(new ApiRequest()
             {
                 Type = RequestType.GET,
-                Url = $"{services.ProductApiBase}/api/cart/{userId}",
+                Url = $"{services.ShoppingCartApiBase}/api/cart/{userId}",
                 AccessToken = token
             });
         }
@@ -45,7 +45,7 @@ namespace mango.web.Services.Impl
             return await this.SendAsync<T>(new ApiRequest()
             {
                 Type = RequestType.DELETE,
-                Url = $"{services.ProductApiBase}/api/cart/{cartDetailId}",
+                Url = $"{services.ShoppingCartApiBase}/api/cart/{cartDetailId}",
                 AccessToken = token
             });
         }
@@ -55,7 +55,7 @@ namespace mango.web.Services.Impl
             return await this.SendAsync<T>(new ApiRequest()
             {
                 Type = RequestType.PUT,
-                Url = $"{services.ProductApiBase}/api/cart/",
+                Url = $"{services.ShoppingCartApiBase}/api/cart/",
                 Body= cartDto,
                 AccessToken = token
             });

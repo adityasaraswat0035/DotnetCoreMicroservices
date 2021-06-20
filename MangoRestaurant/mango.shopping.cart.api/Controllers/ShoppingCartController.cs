@@ -24,20 +24,20 @@ namespace mango.shopping.cart.api.Controllers
         [Route("{userId}")]
         public async Task<IActionResult> Get(string userId)
         {
-            return Ok(await shoppingCartManager.GetCartByUserIdAsync(userId));
+            return OptionalOK(await shoppingCartManager.GetCartByUserIdAsync(userId));
         }
         [HttpPost]
-        public async Task<IActionResult> AddCart(CartDto cartDto)
+        public async Task<IActionResult> Post(CartDto cartDto)
         {
             return Ok(await shoppingCartManager.CreateUpdateCartAsync(cartDto));
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateCart(CartDto cartDto)
+        public async Task<IActionResult> Put(CartDto cartDto)
         {
             return Ok(await shoppingCartManager.CreateUpdateCartAsync(cartDto));
         }
         [HttpDelete]
-        public async Task<IActionResult> RemoveCart(int cartDetailsId)
+        public async Task<IActionResult> Delete(int cartDetailsId)
         {
             return Ok(await shoppingCartManager.RemoveItemFromCartAsync(cartDetailsId));
         }
