@@ -60,5 +60,26 @@ namespace mango.web.Services.Impl
                 AccessToken = token
             });
         }
+
+        public async Task<T> RemoveCouponOnCartAsync<T>(CartDto cartDto, string token = null)
+        {
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                Type = RequestType.POST,
+                Url = $"{services.ShoppingCartApiBase}/api/cart/coupon/remove",
+                Body = cartDto,
+                AccessToken = token
+            });
+        }
+        public async Task<T> ApplyCouponOnCartAsync<T>(CartDto cartDto, string token = null)
+        {
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                Type = RequestType.POST,
+                Url = $"{services.ShoppingCartApiBase}/api/cart/coupon/apply",
+                Body = cartDto,
+                AccessToken = token
+            });
+        }
     }
 }

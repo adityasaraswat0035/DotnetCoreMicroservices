@@ -12,6 +12,8 @@ namespace mango.web.Services.Contracts
         Task<T> AddToCartAsync<T>(CartDto cartDto,string token=null);
         Task<T> UpdateCartAsync<T>(CartDto cartDto, string token = null);
         Task<T> RemoveFromCartAsync<T>(int cartDetailId,string token=null);
+        Task<T> RemoveCouponOnCartAsync<T>(CartDto cartDto,string token=null);
+        Task<T> ApplyCouponOnCartAsync<T>(CartDto cartDto, string token = null);
 
     }
 }

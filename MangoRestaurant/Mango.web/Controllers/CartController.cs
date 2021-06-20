@@ -34,7 +34,22 @@ namespace mango.web.Controllers
             if (result)return RedirectToAction(nameof(Index));
             return View();
         }
-
+        [HttpPost]
+        public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var result = await cartService.RemoveCouponOnCartAsync<bool>(cartDto, accessToken);
+            if (result) return RedirectToAction(nameof(Index));
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ApplyCoupon(CartDto cartDto)
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var result = await cartService.ApplyCouponOnCartAsync<bool>(cartDto, accessToken);
+            if (result) return RedirectToAction(nameof(Index));
+            return View();
+        }
         private async Task<CartDto> LoadCartDtoByUser()
         {
             try
