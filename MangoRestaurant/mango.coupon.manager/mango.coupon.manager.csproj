@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\mango.coupon.contracts\mango.coupon.contracts.csproj" />
     <ProjectReference Include="..\mango.coupon.repository\mango.coupon.repository.csproj" />
+    <ProjectReference Include="..\mango.infrstructure.common\mango.infrstructure.common.csproj" />
   </ItemGroup>
 
 </Project>
