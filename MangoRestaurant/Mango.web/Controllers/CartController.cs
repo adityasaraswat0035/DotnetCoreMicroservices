@@ -15,11 +15,13 @@ namespace mango.web.Controllers
     {
         private readonly IProductService productService;
         private readonly ICartService cartService;
+        private readonly ICouponService couponService;
 
-        public CartController(IProductService productService, ICartService cartService)
+        public CartController(IProductService productService, ICartService cartService, ICouponService couponService)
         {
             this.productService = productService;
             this.cartService = cartService;
+            this.couponService = couponService;
         }
         public async Task<IActionResult> Index()
         {
@@ -31,7 +33,7 @@ namespace mango.web.Controllers
             var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             var result = await cartService.RemoveFromCartAsync<bool>(cartDetailId, accessToken);
-            if (result)return RedirectToAction(nameof(Index));
+            if (result) return RedirectToAction(nameof(Index));
             return View();
         }
         [HttpPost]
@@ -60,10 +62,24 @@ namespace mango.web.Controllers
                 var cart = await cartService.GetCartByUserIdAsync<CartDto>(userId, accessToken);
                 if (cart != null && cart.CartHeader != null)
                 {
+                    try
+                    {
+                        if (!string.IsNullOrWhiteSpace(cart.CartHeader.CouponCode))
+                        {
+                            var coupon = await couponService.GetCouponByCode<CouponDto>(cart.CartHeader.CouponCode, accessToken);
+                            cart.CartHeader.discountTotal = coupon.DiscountAmount;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //log exception here
+                    }
+
                     foreach (var cartDetail in cart.CartDetails)
                     {
                         cart.CartHeader.CartTotal = cartDetail.Product.Price * cartDetail.Count + cart.CartHeader.CartTotal;
                     }
+                    cart.CartHeader.CartTotal -= cart.CartHeader.discountTotal;
                     return cart;
                 }
                 else

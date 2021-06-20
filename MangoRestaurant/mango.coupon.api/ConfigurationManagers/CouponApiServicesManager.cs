@@ -1,4 +1,8 @@
-﻿using mango.infrastructure.boilerplate.managers;
+﻿using mango.coupon.contracts.contracts;
+using mango.coupon.manager;
+using mango.coupon.repository.repositories;
+using mango.coupon.repository.repositories.impl;
+using mango.infrastructure.boilerplate.managers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace mango.coupon.api.ConfigurationManagers
@@ -7,10 +11,8 @@ namespace mango.coupon.api.ConfigurationManagers
     {
         public override void ConfigureService(IServiceCollection services)
         {
-            //services.AddScoped<ProductManager, ProductManagerImpl>();
-            //services.AddScoped<CategoryManager, CategoryManagerImpl>();
-            //services.AddScoped<CategoryRepository, CategoryRepositoryImpl>();
-            //services.AddScoped<ProductRepository, ProductRepositoryImpl>();
+            services.AddScoped<CouponManager, CouponManagerImpl>();
+            services.AddScoped<CouponRepository, CouponRepositoryImpl>();
 
         }
     }

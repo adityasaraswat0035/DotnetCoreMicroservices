@@ -24,7 +24,7 @@ namespace mango.web.Services.Impl
             return await this.SendAsync<T>(new ApiRequest()
             {
                 Type = RequestType.GET,
-                Url = $"{services.ShoppingCartApiBase}/api/coupon/{couponCode}",
+                Url = $"{services.CouponApiBase}/api/coupon/{couponCode}",
                 AccessToken = token
             });
         }
