@@ -1,4 +1,4 @@
-﻿using mango.product.api.db;
+﻿using mango.shopping.cart.api.db;
 using mango.shopping.cart.repository.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;

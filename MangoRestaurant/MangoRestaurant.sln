@@ -37,15 +37,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identityserver", "identitys
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.identity.server", "mango.identity.server\mango.identity.server.csproj", "{557E7F4D-6842-4A8B-846F-7E48524DA49B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.shopping.cart.api", "mango.shopping.cart.api\mango.shopping.cart.api.csproj", "{FC424094-620E-4DFA-B839-EA8C74AA29C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.api", "mango.shopping.cart.api\mango.shopping.cart.api.csproj", "{FC424094-620E-4DFA-B839-EA8C74AA29C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.shopping.cart.repository", "mango.shopping.cart.repository\mango.shopping.cart.repository.csproj", "{8B4230FB-1AD4-4DFE-B295-DE0D20515945}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.repository", "mango.shopping.cart.repository\mango.shopping.cart.repository.csproj", "{8B4230FB-1AD4-4DFE-B295-DE0D20515945}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.shopping.cart.manager", "mango.shopping.cart.manager\mango.shopping.cart.manager.csproj", "{3F82FB8E-F09F-402F-83CA-9112CEAF8E18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.manager", "mango.shopping.cart.manager\mango.shopping.cart.manager.csproj", "{3F82FB8E-F09F-402F-83CA-9112CEAF8E18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.shopping.cart.contracts", "mango.shopping.cart.contracts\mango.shopping.cart.contracts.csproj", "{4DEA10D3-99BF-4B30-A99E-7DF3514002EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.contracts", "mango.shopping.cart.contracts\mango.shopping.cart.contracts.csproj", "{4DEA10D3-99BF-4B30-A99E-7DF3514002EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.shopping.cart.api.db", "mango.shopping.cart.api.db\mango.shopping.cart.api.db.csproj", "{C7443546-1DC0-4271-B40C-D1AB5AD25A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.api.db", "mango.shopping.cart.api.db\mango.shopping.cart.api.db.csproj", "{C7443546-1DC0-4271-B40C-D1AB5AD25A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.api", "mango.coupon.api\mango.coupon.api.csproj", "{CAFE3575-256A-4959-8B79-776997A0A62D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.repository", "mango.coupon.repository\mango.coupon.repository.csproj", "{89EE971B-BC20-4FD5-9280-B63146B38364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.contracts", "mango.coupon.contracts\mango.coupon.contracts.csproj", "{6820820C-4939-44E7-9B2E-24E6F9CC1E77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.manager", "mango.coupon.manager\mango.coupon.manager.csproj", "{16DCA79E-37F0-4464-8354-511F2F50A4E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.api.db", "mango.coupon.api.db\mango.coupon.api.db.csproj", "{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +119,26 @@ Global
 		{C7443546-1DC0-4271-B40C-D1AB5AD25A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7443546-1DC0-4271-B40C-D1AB5AD25A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7443546-1DC0-4271-B40C-D1AB5AD25A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFE3575-256A-4959-8B79-776997A0A62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFE3575-256A-4959-8B79-776997A0A62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFE3575-256A-4959-8B79-776997A0A62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFE3575-256A-4959-8B79-776997A0A62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89EE971B-BC20-4FD5-9280-B63146B38364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EE971B-BC20-4FD5-9280-B63146B38364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89EE971B-BC20-4FD5-9280-B63146B38364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89EE971B-BC20-4FD5-9280-B63146B38364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6820820C-4939-44E7-9B2E-24E6F9CC1E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6820820C-4939-44E7-9B2E-24E6F9CC1E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6820820C-4939-44E7-9B2E-24E6F9CC1E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6820820C-4939-44E7-9B2E-24E6F9CC1E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DCA79E-37F0-4464-8354-511F2F50A4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DCA79E-37F0-4464-8354-511F2F50A4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DCA79E-37F0-4464-8354-511F2F50A4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DCA79E-37F0-4464-8354-511F2F50A4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +158,11 @@ Global
 		{3F82FB8E-F09F-402F-83CA-9112CEAF8E18} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
 		{4DEA10D3-99BF-4B30-A99E-7DF3514002EF} = {8D86B16A-199F-4A72-9732-3BFEA7765F29}
 		{C7443546-1DC0-4271-B40C-D1AB5AD25A6C} = {6D38B533-D350-49D2-8AB6-02BD512BE3F7}
+		{CAFE3575-256A-4959-8B79-776997A0A62D} = {3DCD3F44-F8C0-4923-BE0A-F055773D7158}
+		{89EE971B-BC20-4FD5-9280-B63146B38364} = {E901C0E1-B998-43A5-8E0A-54D7C70402A9}
+		{6820820C-4939-44E7-9B2E-24E6F9CC1E77} = {8D86B16A-199F-4A72-9732-3BFEA7765F29}
+		{16DCA79E-37F0-4464-8354-511F2F50A4E8} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
+		{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9} = {6D38B533-D350-49D2-8AB6-02BD512BE3F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35FAD2FD-8A40-4DD1-B47C-5E9CA11E1A86}
