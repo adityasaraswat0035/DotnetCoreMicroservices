@@ -1,4 +1,6 @@
-﻿using mango.shopping.cart.api.Controllers.Base;
+﻿using mango.infrstructure.common.Wrappers;
+using mango.shopping.cart.api.Controllers.Base;
+using mango.shopping.cart.api.Messages;
 using mango.shopping.cart.contracts.contracts;
 using mango.shopping.cart.contracts.dtos;
 using Microsoft.AspNetCore.Http;
@@ -54,6 +56,27 @@ namespace mango.shopping.cart.api.Controllers
         public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
         {
             return Ok(await shoppingCartManager.RemoveCouponOnCartAsync(cartDto.CartHeader.UserId));
+        }
+
+        [HttpPost]
+        [Route("checkout")]
+        public async Task<IActionResult> Checkout(CheckoutHeaderDto checkoutHeaderDto)
+        {
+            try
+            {
+                Optional<CartDto> cartDto = await shoppingCartManager.GetCartByUserIdAsync(checkoutHeaderDto.UserId);
+                if (cartDto.IsEmpty) return OptionalOK(cartDto);
+                else
+                {
+                    checkoutHeaderDto.CartDetails = cartDto.Get().CartDetails; //now all properties to process the message
+                    //logic to Add Message for Processing ie. Async Point 
+                    return Ok(true);
+                }
+            }catch(Exception ex)
+            {
+                //log exception here or transfer to shink like ELK
+                return Ok(false);
+            }
         }
     }
 }
