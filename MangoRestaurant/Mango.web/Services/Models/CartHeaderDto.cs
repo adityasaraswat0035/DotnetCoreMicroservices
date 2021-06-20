@@ -20,7 +20,8 @@ namespace mango.web.Services.Models
         //For Processing Order  
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public DateTime PickupDateTime { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime PickupDateTime { get; set; } = DateTime.Now;
         public string Phone { get; set; }
         public string Email { get; set; }
         public string CardNumber { get; set; }
