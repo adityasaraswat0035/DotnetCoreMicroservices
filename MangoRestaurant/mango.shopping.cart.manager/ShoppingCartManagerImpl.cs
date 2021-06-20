@@ -20,10 +20,6 @@ namespace mango.shopping.cart.manager
             this.mapper = mapper;
         }
 
-        public async Task<bool> ClearCartAsync(string userId)
-        {
-            return await shoppingCartRepository.ClearCartAsync(userId);
-        }
 
         public async Task<CartDto> CreateUpdateCartAsync(CartDto cartDto)
         {
@@ -49,9 +45,24 @@ namespace mango.shopping.cart.manager
                 return Optional<CartDto>.None();
         }
 
+       
+
         public async Task<bool> RemoveItemFromCartAsync(int CartDetailsId)
         {
             return await shoppingCartRepository.RemoveItemFromCartAsync(CartDetailsId);
+        }
+
+        public async Task<bool> ClearCartAsync(string userId)
+        {
+            return await shoppingCartRepository.ClearCartAsync(userId);
+        }
+        public async Task<bool> ApplyCouponOnCartAsync(string userId, string couponId)
+        {
+            return await shoppingCartRepository.ApplyCouponToCartAsync(userId, couponId);
+        }
+        public async Task<bool> RemoveCouponOnCartAsync(string userId)
+        {
+            return await shoppingCartRepository.RemoveCouponOnCartAsync(userId);
         }
     }
 }

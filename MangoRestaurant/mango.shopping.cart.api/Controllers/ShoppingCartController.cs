@@ -42,5 +42,18 @@ namespace mango.shopping.cart.api.Controllers
         {
             return Ok(await shoppingCartManager.RemoveItemFromCartAsync(cartDetailId));
         }
+
+        [HttpPost]
+        [Route("coupon/apply")]
+        public async Task<IActionResult> ApplyCoupon(CartDto cartDto)
+        {
+            return Ok(await shoppingCartManager.ApplyCouponOnCartAsync(cartDto.CartHeader.UserId, cartDto.CartHeader.CouponCode));
+        }
+        [HttpPost]
+        [Route("coupon/remove")]
+        public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
+        {
+            return Ok(await shoppingCartManager.RemoveCouponOnCartAsync(cartDto.CartHeader.UserId));
+        }
     }
 }

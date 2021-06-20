@@ -10,5 +10,7 @@ namespace mango.shopping.cart.contracts.contracts
         Task<CartDto> CreateUpdateCartAsync(CartDto cartDto);
         Task<bool> RemoveItemFromCartAsync(int CartDetailsId);
         Task<bool> ClearCartAsync(string userId);
+        Task<bool> ApplyCouponOnCartAsync(string userId,string couponId);
+        Task<bool> RemoveCouponOnCartAsync(string userId);
     }
 }

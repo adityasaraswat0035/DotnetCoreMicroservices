@@ -14,7 +14,6 @@ namespace mango.shopping.cart.repository.repositories.impl
         {
             this.shoppingCartDb = shoppingCartDb;
         }
-
         public async Task<bool> ClearCartAsync(string userId)
         {
             var userCart = await shoppingCartDb.CartHeaders.FirstOrDefaultAsync(x => x.UserId == userId);
@@ -107,5 +106,31 @@ namespace mango.shopping.cart.repository.repositories.impl
                 throw;
             }
         }
+
+        public async Task<bool> ApplyCouponToCartAsync(string userid, string couponCode)
+        {
+            var cart =await shoppingCartDb.CartHeaders.FirstOrDefaultAsync(x => x.UserId == userid);
+            if (cart != null)
+            {
+                cart.CouponCode = couponCode;
+                shoppingCartDb.Update(cart);
+               await shoppingCartDb.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+        public async Task<bool> RemoveCouponOnCartAsync(string userid)
+        {
+            var cart = await shoppingCartDb.CartHeaders.FirstOrDefaultAsync(x => x.UserId == userid);
+            if (cart != null)
+            {
+                cart.CouponCode = null;
+                shoppingCartDb.Update(cart);
+                await shoppingCartDb.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
     }
 }

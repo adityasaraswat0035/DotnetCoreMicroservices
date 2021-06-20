@@ -9,5 +9,7 @@ namespace mango.shopping.cart.repository.repositories
         Task<Cart> CreateUpdateCartAsync(Cart cart);
         Task<bool> RemoveItemFromCartAsync(int CartDetailsId);
         Task<bool> ClearCartAsync(string userId);
+        Task<bool> ApplyCouponToCartAsync(string userid, string couponCode);
+        Task<bool> RemoveCouponOnCartAsync(string userid);
     }
 }
