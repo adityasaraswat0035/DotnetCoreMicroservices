@@ -28,6 +28,13 @@ namespace mango.web.Controllers
             return View(await LoadCartDtoByUser());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Checkout()
+        {
+            return View(await LoadCartDtoByUser());
+        }
+
+
         public async Task<IActionResult> RemoveItem(int cartDetailId)
         {
             var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
