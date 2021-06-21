@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace mango.order.repository.Entities
 {
-    [Table("OrderDetail")]
+    [Table("OrderHeader")]
     public class OrderHeader:BaseEntity<int>
     {
         public string UserId { get; set; }

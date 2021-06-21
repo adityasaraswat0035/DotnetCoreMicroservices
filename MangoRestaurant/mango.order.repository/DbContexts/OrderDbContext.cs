@@ -18,9 +18,9 @@ namespace mango.order.repository.DbContexts
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<OrderHeader>()
-                .HasMany(x => x.OrderDetails)
-                .WithOne(x => x.OrderHeader)
+            modelBuilder.Entity<OrderDetails>()
+                .HasOne(x => x.OrderHeader)
+                .WithMany(x => x.OrderDetails)
                 .HasForeignKey(x => x.OrderHeaderId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
