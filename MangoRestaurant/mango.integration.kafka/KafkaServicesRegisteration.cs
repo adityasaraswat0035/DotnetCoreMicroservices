@@ -14,8 +14,9 @@ namespace mango.integration.kafka
     {
         public static void AddKafkaServices(this IServiceCollection services,IConfiguration configuration)
         {
-            services.Configure<KafkaConfiguration>(options => configuration.GetSection("KafkaConfiguration").Bind(options));
-            services.AddScoped<IProducer, KafkaProducer>();
+            services.Configure<KafkaProducerConfiguration>(instance => configuration.GetSection("KafkaProducerConfiguration").Bind(instance));
+            services.Configure<KafkaConsumerConfiguration>(instance=>configuration.GetSection("KafkaConsumerConfiguration").Bind(instance));
+            services.AddSingleton<IKafkaProducer, KafkaProducer>();
         }
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace mango.integration.kafka.Contract
 {
-    public interface IProducer
+    public interface IKafkaConsumer
     {
-        public Task<bool> SendMessage(string topic, IMessage message);
+
     }
 }

@@ -13,21 +13,18 @@ using System.Threading.Tasks;
 
 namespace mango.integration.kafka
 {
-    public class KafkaProducer : IProducer
+    public class KafkaProducer : IKafkaProducer
     {
         private readonly ProducerConfig producerConfig;
         private static IDictionary<string, TopicMetadata> topicMap = new Dictionary<string, TopicMetadata>();
         private static object _key = new object();
 
-        public KafkaProducer(IOptions<KafkaConfiguration> kafkaConfiguration)
+        public KafkaProducer(IOptions<KafkaProducerConfiguration> kafkaProducerConfiguration)
         {
-            this.producerConfig = new ProducerConfig()
-            {
-                BootstrapServers = kafkaConfiguration?.Value.BootstrapServers
-            };
+            this.producerConfig = kafkaProducerConfiguration.Value?.Get();
             LoadAllTopic(new AdminClientConfig()
             {
-                BootstrapServers = kafkaConfiguration?.Value.BootstrapServers
+                BootstrapServers = kafkaProducerConfiguration?.Value.BootstrapServers
             });
         }
 
@@ -70,7 +67,7 @@ namespace mango.integration.kafka
                     {
                         using (IAdminClient admin = new AdminClientBuilder(adminConfig).Build())
                         {
-                            Metadata brokerMetaData = admin.GetMetadata(TimeSpan.FromMinutes(5));
+                            Metadata brokerMetaData = admin.GetMetadata(TimeSpan.FromSeconds(15));
                             List<TopicMetadata> topics = brokerMetaData.Topics;
                             foreach (var topic in topics)
                             {
