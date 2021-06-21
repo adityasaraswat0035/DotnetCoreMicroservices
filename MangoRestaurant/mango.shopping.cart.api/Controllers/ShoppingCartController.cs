@@ -1,4 +1,5 @@
 ﻿using mango.infrstructure.common.Wrappers;
+using mango.integration.kafka.Contract;
 using mango.shopping.cart.api.Controllers.Base;
 using mango.shopping.cart.api.Messages;
 using mango.shopping.cart.contracts.contracts;
@@ -17,10 +18,12 @@ namespace mango.shopping.cart.api.Controllers
     public class ShoppingCartController : ApiBaseController
     {
         private readonly ShoppingCartManager shoppingCartManager;
+        private readonly IProducer producer;
 
-        public ShoppingCartController(ShoppingCartManager shoppingCartManager)
+        public ShoppingCartController(ShoppingCartManager shoppingCartManager, IProducer producer)
         {
             this.shoppingCartManager = shoppingCartManager;
+            this.producer = producer;
         }
         [HttpGet]
         [Route("{userId}")]
@@ -69,10 +72,13 @@ namespace mango.shopping.cart.api.Controllers
                 else
                 {
                     checkoutHeaderDto.CartDetails = cartDto.Get().CartDetails; //now all properties to process the message
-                    //logic to Add Message for Processing ie. Async Point 
+                                                                               //logic to Add Message for Processing ie. Async Point 
+                    await producer.SendMessage("OrderProcessing", checkoutHeaderDto);
                     return Ok(true);
                 }
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 //log exception here or transfer to shink like ELK
                 return Ok(false);

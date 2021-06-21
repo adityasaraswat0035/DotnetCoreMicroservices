@@ -37,18 +37,18 @@
                             <input class="form-control form_datetime" type="text" asp-for="CartHeader.PickupDateTime" value="@Model.CartHeader.PickupDateTime.ToString("yyyy-MM-dd")">
                         </div>
                         <div class="col-12">
-                            <label class="col-form-label" asp-for="CartHeader.CardNumber">Card Number :</label>
-                            <input class="form-control" />
+                            <label class="col-form-label">Card Number :</label>
+                            <input class="form-control"  asp-for="CartHeader.CardNumber"/>
                         </div>
 
                         <div class="col-12">
-                            <label class="col-form-label" asp-for="CartHeader.CVV">CVV :</label>
-                            <input class="form-control" />
+                            <label class="col-form-label">CVV :</label>
+                            <input class="form-control" asp-for="CartHeader.CVV" />
                         </div>
 
                         <div class="col-12 pb-4">
-                            <label class="col-form-label" asp-for="CartHeader.CVV">Expiry :</label>
-                            <input placeholder="MMYY" class="form-control" />
+                            <label class="col-form-label">Expiry :</label>
+                            <input placeholder="MMYY" class="form-control"   asp-for="CartHeader.ExpiryMonthYear"/>
                         </div>
                     </div>
                 </div>

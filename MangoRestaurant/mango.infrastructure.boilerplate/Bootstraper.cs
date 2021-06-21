@@ -25,6 +25,7 @@ namespace mango.infrastructure.boilerplate
             applicationManagers.Add(typeof(DefaultGlobalExceptionManager), new DefaultGlobalExceptionManager());
             applicationManagers.Add(typeof(DefaultSwaggerManager), new DefaultSwaggerManager());
             applicationManagers.Add(typeof(DefaultAutoMapperManager), new DefaultAutoMapperManager());
+            applicationManagers.Add(typeof(DefaultMessageBrokerManager), new DefaultMessageBrokerManager());
             applicationManagers.Add(typeof(DefaultAuthenticationManager), new DefaultAuthenticationManager());
             applicationManagers.Add(typeof(DefaultAuthorizationManager), new DefaultAuthorizationManager());
             applicationManagers.Add(typeof(DefaultApplicationServicesManager), new DefaultApplicationServicesManager());

@@ -1,4 +1,5 @@
-﻿using mango.shopping.cart.contracts.dtos;
+﻿using mango.integration.kafka.Contract;
+using mango.shopping.cart.contracts.dtos;
 using mango.shopping.cart.repository.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace mango.shopping.cart.api.Messages
 {
-    public class CheckoutHeaderDto
+    public class CheckoutHeaderDto:IMessage
     {
         public string UserId { get; set; }
         public string CouponCode { get; set; }
