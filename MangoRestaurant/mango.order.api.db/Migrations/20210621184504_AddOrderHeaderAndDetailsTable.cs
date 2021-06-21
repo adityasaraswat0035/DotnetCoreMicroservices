@@ -15,7 +15,7 @@ namespace mango.order.api.db.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CouponCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CartTotal = table.Column<double>(type: "float", nullable: false),
+                    OrderTotal = table.Column<double>(type: "float", nullable: false),
                     DiscountTotal = table.Column<double>(type: "float", nullable: false),
                     Firstname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Lastname = table.Column<string>(type: "nvarchar(max)", nullable: true),

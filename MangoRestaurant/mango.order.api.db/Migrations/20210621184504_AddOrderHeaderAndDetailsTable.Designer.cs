@@ -10,7 +10,7 @@ using mango.order.repository.DbContexts;
 namespace mango.order.api.db.Migrations
 {
     [DbContext(typeof(OrderDbContext))]
-    [Migration("20210621160255_AddOrderHeaderAndDetailsTable")]
+    [Migration("20210621184504_AddOrderHeaderAndDetailsTable")]
     partial class AddOrderHeaderAndDetailsTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,9 +62,6 @@ namespace mango.order.api.db.Migrations
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("CartTotal")
-                        .HasColumnType("float");
-
                     b.Property<string>("CouponCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -85,6 +82,9 @@ namespace mango.order.api.db.Migrations
 
                     b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<double>("OrderTotal")
+                        .HasColumnType("float");
 
                     b.Property<bool>("PaymentStatus")
                         .HasColumnType("bit");
