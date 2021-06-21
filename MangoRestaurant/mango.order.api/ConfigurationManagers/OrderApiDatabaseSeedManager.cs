@@ -1,18 +1,14 @@
 ﻿using mango.infrastructure.boilerplate.managers;
-using mango.product.api.Infrastructure.Database;
-using mango.product.contracts.contracts;
+using mango.order.api.Infrastructure.Database;
+using mango.order.contracts.contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace mango.product.api.ConfigurationManagers
+namespace mango.order.api.ConfigurationManagers
 {
-    public class ProductDatabaseSeedManager : DefaultDatabaseSeedManager
+    public class OrderApiDatabaseSeedManager : DefaultDatabaseSeedManager
     {
         public override void ConfigureService(IServiceCollection services)
         {

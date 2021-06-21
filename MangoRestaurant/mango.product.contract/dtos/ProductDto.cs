@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mango.product.contract.dtos
+namespace mango.product.contracts.dtos
 {
     public class ProductDto
     {
         public int Id { get; set; }
-        public String Name { get; set; }
+        public string Name { get; set; }
         public double Price { get; set; }
-        public String Description { get; set; }
+        public string Description { get; set; }
         public CategoryDto Category { get; set; }
-        public String ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

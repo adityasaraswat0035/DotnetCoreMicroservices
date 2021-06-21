@@ -1,12 +1,12 @@
 ﻿using mango.infrstructure.common.Wrappers;
-using mango.product.contract.dtos;
+using mango.product.contracts.dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mango.product.contract.contracts
+namespace mango.product.contracts.contracts
 {
     public interface CategoryManager
     {

@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\mango.product.contract\mango.product.contracts.csproj" />
-    <ProjectReference Include="..\mango.product.repository\mango.product.repository.csproj" />
+    <ProjectReference Include="..\mango.order.contracts\mango.order.contracts.csproj" />
+    <ProjectReference Include="..\mango.order.repository\mango.order.repository.csproj" />
   </ItemGroup>
 
 </Project>

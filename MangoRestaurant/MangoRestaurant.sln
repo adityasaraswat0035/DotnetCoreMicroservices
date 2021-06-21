@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.api.db", "man
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contracts", "contracts", "{8D86B16A-199F-4A72-9732-3BFEA7765F29}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.contract", "mango.product.contract\mango.product.contract.csproj", "{4C26B749-DA80-480F-BF67-1299D6129673}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.product.contracts", "mango.product.contract\mango.product.contracts.csproj", "{4C26B749-DA80-480F-BF67-1299D6129673}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{20B0FDB3-F25D-4266-9489-716592056DDF}"
 EndProject
@@ -47,17 +47,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.contrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.shopping.cart.api.db", "mango.shopping.cart.api.db\mango.shopping.cart.api.db.csproj", "{C7443546-1DC0-4271-B40C-D1AB5AD25A6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.api", "mango.coupon.api\mango.coupon.api.csproj", "{CAFE3575-256A-4959-8B79-776997A0A62D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.coupon.api", "mango.coupon.api\mango.coupon.api.csproj", "{CAFE3575-256A-4959-8B79-776997A0A62D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.repository", "mango.coupon.repository\mango.coupon.repository.csproj", "{89EE971B-BC20-4FD5-9280-B63146B38364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.coupon.repository", "mango.coupon.repository\mango.coupon.repository.csproj", "{89EE971B-BC20-4FD5-9280-B63146B38364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.contracts", "mango.coupon.contracts\mango.coupon.contracts.csproj", "{6820820C-4939-44E7-9B2E-24E6F9CC1E77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.coupon.contracts", "mango.coupon.contracts\mango.coupon.contracts.csproj", "{6820820C-4939-44E7-9B2E-24E6F9CC1E77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.manager", "mango.coupon.manager\mango.coupon.manager.csproj", "{16DCA79E-37F0-4464-8354-511F2F50A4E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.coupon.manager", "mango.coupon.manager\mango.coupon.manager.csproj", "{16DCA79E-37F0-4464-8354-511F2F50A4E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.coupon.api.db", "mango.coupon.api.db\mango.coupon.api.db.csproj", "{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.coupon.api.db", "mango.coupon.api.db\mango.coupon.api.db.csproj", "{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.integration.kafka", "mango.integration.kafka\mango.integration.kafka.csproj", "{B823B59B-6A75-4408-B55A-9A7C1AF1A843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mango.integration.kafka", "mango.integration.kafka\mango.integration.kafka.csproj", "{B823B59B-6A75-4408-B55A-9A7C1AF1A843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.order.api", "mango.order.api\mango.order.api.csproj", "{5C15C05F-6C78-4DD4-9059-E237784B5FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.order.repository", "mango.order.repository\mango.order.repository.csproj", "{389C437A-2786-421C-A17D-C7274631214E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.order.contracts", "mango.order.contracts\mango.order.contracts.csproj", "{D1FC5A32-7392-4398-B455-C851FBF08207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.order.manager", "mango.order.manager\mango.order.manager.csproj", "{DCEF3454-A846-464D-82A9-9DC54A44B226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mango.order.api.db", "mango.order.api.db\mango.order.api.db.csproj", "{7BE537DE-A150-4E3B-B5E5-EBB3CACD5387}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +155,26 @@ Global
 		{B823B59B-6A75-4408-B55A-9A7C1AF1A843}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B823B59B-6A75-4408-B55A-9A7C1AF1A843}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B823B59B-6A75-4408-B55A-9A7C1AF1A843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C15C05F-6C78-4DD4-9059-E237784B5FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C15C05F-6C78-4DD4-9059-E237784B5FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C15C05F-6C78-4DD4-9059-E237784B5FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C15C05F-6C78-4DD4-9059-E237784B5FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389C437A-2786-421C-A17D-C7274631214E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389C437A-2786-421C-A17D-C7274631214E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389C437A-2786-421C-A17D-C7274631214E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389C437A-2786-421C-A17D-C7274631214E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1FC5A32-7392-4398-B455-C851FBF08207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1FC5A32-7392-4398-B455-C851FBF08207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1FC5A32-7392-4398-B455-C851FBF08207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1FC5A32-7392-4398-B455-C851FBF08207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEF3454-A846-464D-82A9-9DC54A44B226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEF3454-A846-464D-82A9-9DC54A44B226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEF3454-A846-464D-82A9-9DC54A44B226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEF3454-A846-464D-82A9-9DC54A44B226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE537DE-A150-4E3B-B5E5-EBB3CACD5387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE537DE-A150-4E3B-B5E5-EBB3CACD5387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE537DE-A150-4E3B-B5E5-EBB3CACD5387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE537DE-A150-4E3B-B5E5-EBB3CACD5387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +200,11 @@ Global
 		{16DCA79E-37F0-4464-8354-511F2F50A4E8} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
 		{C84B6B5C-49E2-4A2D-86AD-B1A67C3E86B9} = {6D38B533-D350-49D2-8AB6-02BD512BE3F7}
 		{B823B59B-6A75-4408-B55A-9A7C1AF1A843} = {20B0FDB3-F25D-4266-9489-716592056DDF}
+		{5C15C05F-6C78-4DD4-9059-E237784B5FEF} = {3DCD3F44-F8C0-4923-BE0A-F055773D7158}
+		{389C437A-2786-421C-A17D-C7274631214E} = {E901C0E1-B998-43A5-8E0A-54D7C70402A9}
+		{D1FC5A32-7392-4398-B455-C851FBF08207} = {8D86B16A-199F-4A72-9732-3BFEA7765F29}
+		{DCEF3454-A846-464D-82A9-9DC54A44B226} = {33B71942-46AD-4A3F-BC58-59C4DD7FED90}
+		{7BE537DE-A150-4E3B-B5E5-EBB3CACD5387} = {6D38B533-D350-49D2-8AB6-02BD512BE3F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35FAD2FD-8A40-4DD1-B47C-5E9CA11E1A86}

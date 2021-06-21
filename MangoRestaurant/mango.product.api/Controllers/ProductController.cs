@@ -2,8 +2,8 @@
 using mango.product.api.Controllers.Base;
 using mango.product.api.Infrastructure;
 using mango.product.api.Models;
-using mango.product.contract.contracts;
-using mango.product.contract.dtos;
+using mango.product.contracts.contracts;
+using mango.product.contracts.dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;

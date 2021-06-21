@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using mango.product.contract.dtos;
+using mango.product.contracts.dtos;
 using mango.product.repository.Entities;
 using System;
 using System.Collections.Generic;

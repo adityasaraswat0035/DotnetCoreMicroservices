@@ -1,4 +1,4 @@
-﻿using mango.product.contract.contracts;
+﻿using mango.product.contracts.contracts;
 using mango.product.repository.DbContexts;
 using mango.product.repository.Entities;
 using Microsoft.EntityFrameworkCore;

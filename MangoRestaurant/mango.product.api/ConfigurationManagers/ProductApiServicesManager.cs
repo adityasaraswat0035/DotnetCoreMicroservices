@@ -1,5 +1,5 @@
 ﻿using mango.infrastructure.boilerplate.managers;
-using mango.product.contract.contracts;
+using mango.product.contracts.contracts;
 using mango.product.manager;
 using mango.product.repository.repositories;
 using mango.product.repository.repositories.impl;

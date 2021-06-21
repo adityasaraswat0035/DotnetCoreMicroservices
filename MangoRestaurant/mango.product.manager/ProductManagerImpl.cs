@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using mango.infrstructure.common.Wrappers;
-using mango.product.contract.contracts;
-using mango.product.contract.dtos;
+using mango.product.contracts.contracts;
+using mango.product.contracts.dtos;
 using mango.product.repository.Entities;
 using mango.product.repository.repositories;
 using System;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mango.product.contracts.contracts
+namespace mango.order.contracts.contracts
 {
     public interface DbInitializer
     {
