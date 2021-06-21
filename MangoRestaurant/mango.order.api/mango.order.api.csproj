@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\mango.infrastructure.boilerplate\mango.infrastructure.boilerplate.csproj" />
+    <ProjectReference Include="..\mango.integration.kafka\mango.integration.kafka.csproj" />
     <ProjectReference Include="..\mango.order.api.db\mango.order.api.db.csproj" />
     <ProjectReference Include="..\mango.order.manager\mango.order.manager.csproj" />
     <ProjectReference Include="..\mango.order.repository\mango.order.repository.csproj" />

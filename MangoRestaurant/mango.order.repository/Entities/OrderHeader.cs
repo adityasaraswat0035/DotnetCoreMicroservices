@@ -13,7 +13,7 @@ namespace mango.order.repository.Entities
     {
         public string UserId { get; set; }
         public string CouponCode { get; set; }
-        public double CartTotal { get; set; }
+        public double OrderTotal { get; set; }
         public double DiscountTotal { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }

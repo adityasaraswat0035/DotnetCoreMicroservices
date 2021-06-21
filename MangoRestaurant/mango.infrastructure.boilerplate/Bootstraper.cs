@@ -28,9 +28,9 @@ namespace mango.infrastructure.boilerplate
             applicationManagers.Add(typeof(DefaultMessageBrokerManager), new DefaultMessageBrokerManager());
             applicationManagers.Add(typeof(DefaultAuthenticationManager), new DefaultAuthenticationManager());
             applicationManagers.Add(typeof(DefaultAuthorizationManager), new DefaultAuthorizationManager());
-            applicationManagers.Add(typeof(DefaultApplicationServicesManager), new DefaultApplicationServicesManager());
             applicationManagers.Add(typeof(DefaultDbContextManager), new DefaultDbContextManager() { Configuration = configuration });
             applicationManagers.Add(typeof(DefaultDatabaseSeedManager), new DefaultDatabaseSeedManager());
+            applicationManagers.Add(typeof(DefaultApplicationServicesManager), new DefaultApplicationServicesManager());
             applicationManagers.Add(typeof(DefaultControllerRoutingManager), new DefaultControllerRoutingManager());
 
             CheckAndReplaceIfAnyManagerExtended(configuration);

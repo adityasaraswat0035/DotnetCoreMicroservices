@@ -18,9 +18,9 @@ namespace mango.shopping.cart.api.Controllers
     public class ShoppingCartController : ApiBaseController
     {
         private readonly ShoppingCartManager shoppingCartManager;
-        private readonly IProducer producer;
+        private readonly IKafkaProducer producer;
 
-        public ShoppingCartController(ShoppingCartManager shoppingCartManager, IProducer producer)
+        public ShoppingCartController(ShoppingCartManager shoppingCartManager, IKafkaProducer producer)
         {
             this.shoppingCartManager = shoppingCartManager;
             this.producer = producer;
