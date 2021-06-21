@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using mango.order.contracts.dtos;
+using mango.order.repository.Entities;
 
 namespace mango.order.manager.Mappers.Configurations
 {
@@ -8,7 +10,8 @@ namespace mango.order.manager.Mappers.Configurations
         {
             var mappingConfig = new MapperConfiguration(configure =>
             {
-                //configure.CreateMap<CouponDto, Coupon>().ReverseMap();
+                configure.CreateMap<OrderDetailsDto, OrderDetails>().ReverseMap();
+                configure.CreateMap<OrderHeaderDto, OrderHeader>().ReverseMap();
             });
             return mappingConfig.CreateMapper(); ;
         }
